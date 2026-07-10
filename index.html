@@ -583,14 +583,54 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 980px) {
-      nav { padding: 0 20px; }
+      nav { padding: 0 16px; height: 56px; }
       .nav-links { display: none; }
-      .hero { padding: 60px 24px 48px; }
-      .hero h1 { font-size: 38px; letter-spacing: -1.5px; }
-      section { padding: 60px 24px; }
+      .nav-portal-tag { display: none; }
+      .nav-wordmark { font-size: 17px; }
+      .hero { padding: 48px 20px 40px; }
+      .hero h1 { font-size: 32px; letter-spacing: -1.2px; }
+      .hero-sub { font-size: 15px; }
+      .hero-stats { gap: 24px; margin-top: 40px; padding-top: 28px; }
+      .stat-num { font-size: 26px; }
+      .stat-label { font-size: 12px; }
+      section { padding: 48px 20px; }
+      .section-h2 { font-size: 28px; letter-spacing: -0.8px; }
+      .section-lead { font-size: 15px; }
       .vp-grid, .product-grid, .corridor-grid, .why-grid, .tier-grid, .qs-grid {
         grid-template-columns: 1fr;
       }
+      .product-grid { gap: 32px; }
+      .qs-grid { gap: 32px; }
+      .code-body { font-size: 11px; padding: 18px 16px; }
+      .bench-table { font-size: 13px; }
+      .bench-table th, .bench-table td { padding: 10px 12px; }
+      .tier-card { padding: 24px 20px; }
+      .contact-section { padding: 48px 20px; }
+      .contact-methods { flex-direction: column; align-items: stretch; }
+      .contact-method { justify-content: center; }
+      footer { padding: 20px 16px; flex-direction: column; text-align: center; gap: 12px; }
+      .footer-links { justify-content: center; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .contact-ctas { flex-direction: column; align-items: stretch; }
+      .contact-ctas .btn { width: 100%; justify-content: center; }
+      .c-header { padding: 24px 20px 20px; }
+      .c-title { font-size: 22px; }
+      .c-body { padding: 20px; }
+      .why-card { padding: 24px 20px; }
+      .why-num { font-size: 32px; }
+      .lang-region-row { padding: 12px 14px; }
+      .lang-region-name { font-size: 10px; }
+      .lc { font-size: 11px; padding: 3px 8px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 26px; letter-spacing: -1px; }
+      .hero-stats { flex-direction: column; gap: 20px; }
+      .nav-right .btn { padding: 8px 14px; font-size: 12px; }
+      .lang-pill button { padding: 6px 12px; font-size: 12px; }
+      .section-h2 { font-size: 24px; }
+      .bench-table { display: block; overflow-x: auto; }
     }
   </style>
 </head>
