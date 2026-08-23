@@ -114,6 +114,7 @@ section{padding:80px 0;}
 .corridor-chips{display:flex;flex-wrap:wrap;gap:6px;}
 .corridor-chips span{font-size:11.5px;padding:5px 12px;border-radius:100px;background:var(--soft);border:1px solid var(--line);color:var(--ink);}
 .corridor-chips span.exclusive{background:rgba(220,40,90,0.08);border-color:rgba(220,40,90,0.2);color:#DC285A;font-weight:500;}
+@media(max-width:900px){.corridor-grid[style*="1fr 1fr 1fr"]{grid-template-columns:1fr!important;}}
 
 /* WHO BUYS */
 .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
@@ -295,12 +296,12 @@ footer a:hover{color:var(--ink);}
 </section>
 
 
-<!-- CHINA TRADE CORRIDORS -->
+<!-- TRADE CORRIDORS -->
 <section>
   <div class="wrap">
-    <div class="eyebrow reveal" style="color:#DC285A;">China Trade Corridors</div>
-    <h2 style="font-size:clamp(26px,3.5vw,38px);margin-bottom:12px;" class="reveal">Your Two Target Markets</h2>
-    <p style="color:var(--muted);font-size:15.5px;max-width:640px;margin-bottom:36px;line-height:1.7;" class="reveal">VALSEA's China distribution program focuses on two corridors where Chinese enterprise expansion is fastest &mdash; and where no competing speech platform can fully serve the language requirements.</p>
+    <div class="eyebrow reveal" style="color:#DC285A;">Trade Corridors</div>
+    <h2 style="font-size:clamp(26px,3.5vw,38px);margin-bottom:12px;" class="reveal">Target Markets &mdash; $1.4T+ in Trade</h2>
+    <p style="color:var(--muted);font-size:15.5px;max-width:640px;margin-bottom:36px;line-height:1.7;" class="reveal">VALSEA focuses on corridors where cross-border enterprise expansion is fastest &mdash; and where no competing speech platform can fully serve the language requirements.</p>
 
     <div class="corridor-grid reveal">
       <div class="corridor-card">
@@ -326,8 +327,30 @@ footer a:hover{color:var(--ink);}
         </div>
       </div>
       <div class="corridor-card">
-        <div class="corridor-header">
-          <div class="c-label">Corridor 02 &mdash; Growth Activation</div>
+        <div class="corridor-header" style="background:linear-gradient(135deg,#1B3A2D 0%,#2E5F4A 100%);">
+          <div class="c-label">Corridor 02 &mdash; Active Beachhead</div>
+          <h3>India &#8596; UAE</h3>
+          <div class="c-meta">$178B trade volume &middot; GTM Score: 21.5 / 25</div>
+        </div>
+        <div class="corridor-body">
+          <p class="c-desc">Indian logistics workers, BPO agents, and construction crews across the Gulf face frantic Hindi/Malayalam&#8596;Arabic/English calls on every delayed container and project coordination. No platform handles these accent combinations reliably.</p>
+          <ul>
+            <li>Logistics &amp; 3PL multilingual dispatch and coordination calls</li>
+            <li>BPO/contact center transcription &mdash; Hindi &#8596; Arabic &#8596; English</li>
+            <li>Construction/EPC site meeting intelligence across languages</li>
+            <li>Trade documentation from mixed-language voice instructions</li>
+          </ul>
+          <div class="corridor-chips">
+            <span>Hindi</span>
+            <span>Malayalam</span>
+            <span>Gulf Arabic</span>
+            <span>English</span>
+          </div>
+        </div>
+      </div>
+      <div class="corridor-card">
+        <div class="corridor-header" style="background:linear-gradient(135deg,#1B2A3D 0%,#2E4A5F 100%);">
+          <div class="c-label">Corridor 03 &mdash; Growth Activation</div>
           <h3>China &#8596; Southeast Asia</h3>
           <div class="c-meta">$200B+ trade volume &middot; GTM Score: 17.5 / 25</div>
         </div>
@@ -347,6 +370,83 @@ footer a:hover{color:var(--ink);}
             <span>Taglish</span>
             <span>Singlish</span>
           </div>
+        </div>
+      </div>
+      <div class="corridor-card">
+        <div class="corridor-header" style="background:linear-gradient(135deg,#3D1B2A 0%,#5F2E4A 100%);">
+          <div class="c-label">Corridor 04 &mdash; Parallel Activation</div>
+          <h3>India &#8596; Africa</h3>
+          <div class="c-meta">$100B+ trade volume &middot; GTM Score: 19.0 / 25</div>
+        </div>
+        <div class="corridor-body">
+          <p class="c-desc">Indian manufacturing EPZs, pharma distribution, and IT/BPO operations across East Africa are growing 16.5% annually. Workers and managers switch between Hindi, Swahili, English, and French with no reliable transcription available.</p>
+          <ul>
+            <li>Manufacturing EPZ floor communications and safety compliance</li>
+            <li>Pharma distribution compliance calls and documentation</li>
+            <li>IT/BPO service desk transcription across accent pairs</li>
+            <li>Trade finance voice instructions &mdash; Hindi &#8596; Swahili &#8596; French</li>
+          </ul>
+          <div class="corridor-chips">
+            <span>Swahili</span>
+            <span>Hindi</span>
+            <span>English</span>
+            <span>French</span>
+          </div>
+        </div>
+      </div>
+      <div class="corridor-card">
+        <div class="corridor-header" style="background:linear-gradient(135deg,#2D1B3D 0%,#4A2E5F 100%);">
+          <div class="c-label">Corridor 05 &mdash; Partner-Led</div>
+          <h3>India &#8596; China</h3>
+          <div class="c-meta">$136B trade volume &middot; Zero direct sales cost</div>
+        </div>
+        <div class="corridor-body">
+          <p class="c-desc">Distributed via Shellkode (AWS India) + Sinnet Cloud (AWS China). Manufacturing documentation, pharma compliance, and IT/tech services between India and China require Hindi/Tamil&#8596;Mandarin &mdash; a pair no incumbent covers.</p>
+          <ul>
+            <li>Manufacturing documentation &mdash; Hindi/Tamil &#8596; Mandarin</li>
+            <li>Pharma compliance call recording and transcription</li>
+            <li>IT/tech services multilingual meeting intelligence</li>
+            <li>Cross-border project management voice notes</li>
+          </ul>
+          <div class="corridor-chips">
+            <span>Hindi</span>
+            <span>Tamil</span>
+            <span>Mandarin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:16px;margin-top:40px;margin-bottom:16px;" class="reveal">Coming next</h3>
+    <div class="corridor-grid reveal" style="grid-template-columns:1fr 1fr 1fr;">
+      <div class="corridor-card">
+        <div class="corridor-header" style="padding:20px 24px 16px;background:linear-gradient(135deg,#333 0%,#555 100%);">
+          <div class="c-label">Phase 2+</div>
+          <h3 style="font-size:17px;">China &#8596; Pakistan</h3>
+          <div class="c-meta">$62B &middot; CPEC corridor</div>
+        </div>
+        <div class="corridor-body" style="padding:16px 24px 20px;">
+          <div class="corridor-chips"><span>Mandarin</span><span>Urdu</span><span>Punjabi</span><span>Pashto</span></div>
+        </div>
+      </div>
+      <div class="corridor-card">
+        <div class="corridor-header" style="padding:20px 24px 16px;background:linear-gradient(135deg,#333 0%,#555 100%);">
+          <div class="c-label">Phase 2+</div>
+          <h3 style="font-size:17px;">Philippines &#8596; Gulf</h3>
+          <div class="c-meta">$10B remittances &middot; OFW corridor</div>
+        </div>
+        <div class="corridor-body" style="padding:16px 24px 20px;">
+          <div class="corridor-chips"><span>Tagalog</span><span>Arabic</span><span>Gulf English</span></div>
+        </div>
+      </div>
+      <div class="corridor-card">
+        <div class="corridor-header" style="padding:20px 24px 16px;background:linear-gradient(135deg,#333 0%,#555 100%);">
+          <div class="c-label">Phase 2+</div>
+          <h3 style="font-size:17px;">Bangladesh &#8596; China</h3>
+          <div class="c-meta">$6B+ &middot; RMG corridor</div>
+        </div>
+        <div class="corridor-body" style="padding:16px 24px 20px;">
+          <div class="corridor-chips"><span>Bengali</span><span>Mandarin</span></div>
         </div>
       </div>
     </div>
