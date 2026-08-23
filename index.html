@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VALSEA — China Distribution Partner Portal</title>
+  <title>VALSEA — Partner Program</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -18,6 +18,11 @@
       --blue: #185FA5;
       --blue-bg: rgba(24,95,165,0.08);
       --purple: #7C3AED;
+      --purple-bg: rgba(124,58,237,0.08);
+      --amber: #B45309;
+      --amber-bg: rgba(180,83,9,0.08);
+      --rose: #BE185D;
+      --rose-bg: rgba(190,24,93,0.08);
       --bg: #ffffff;
       --card: #f8f9fc;
       --card2: #f0f3f8;
@@ -44,7 +49,6 @@
     html.lang-en .zh { display: none !important; }
     html.lang-zh .en { display: none !important; }
 
-    /* Chinese font stack when ZH active */
     html.lang-zh body {
       font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Source Han Sans CN', 'Inter', sans-serif;
     }
@@ -97,7 +101,6 @@
 
     .nav-right { display: flex; align-items: center; gap: 14px; }
 
-    /* Language toggle pill */
     .lang-pill {
       display: flex; align-items: center;
       background: var(--card2); border: 1px solid var(--border);
@@ -130,64 +133,6 @@
     .btn-ghost { background: rgba(255,255,255,0.1); color: white; border: 1.5px solid rgba(255,255,255,0.2); }
     .btn-ghost:hover { background: rgba(255,255,255,0.18); }
 
-    /* ── HERO ── */
-    .hero {
-      max-width: 1120px; margin: 0 auto;
-      padding: 96px 48px 72px;
-    }
-
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 14px; margin-bottom: 28px;
-      background: var(--pink-bg);
-      border: 1px solid rgba(219,39,119,0.22);
-      border-radius: 100px;
-      font-size: 12px; font-weight: 700; color: var(--pink);
-      letter-spacing: 0.3px;
-    }
-
-    .hero-badge-dot {
-      width: 7px; height: 7px;
-      background: var(--pink); border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(0.85); }
-    }
-
-    .hero h1 {
-      font-size: 56px; font-weight: 900; letter-spacing: -2.5px;
-      line-height: 1.08; color: var(--text); max-width: 820px;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 .accent { color: var(--pink); }
-
-    .hero-sub {
-      font-size: 18px; color: var(--muted); line-height: 1.7;
-      max-width: 620px; margin-bottom: 44px;
-    }
-
-    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    .hero-stats {
-      display: flex; gap: 48px; flex-wrap: wrap;
-      margin-top: 64px; padding-top: 40px;
-      border-top: 1px solid var(--border);
-    }
-
-    .stat-num {
-      font-size: 34px; font-weight: 900; letter-spacing: -1.5px;
-      color: var(--text); line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 13px; color: var(--muted);
-      margin-top: 4px; line-height: 1.45;
-    }
-
     /* ── SECTIONS ── */
     section { padding: 88px 48px; }
 
@@ -210,223 +155,165 @@
 
     .bg-card { background: var(--card); }
 
-    /* ── ABOUT / VALUE PROPS ── */
-    .vp-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-    }
-
-    .vp-card {
-      background: white; border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 28px;
-      transition: box-shadow 0.2s;
-    }
-
-    .vp-card:hover { box-shadow: var(--shadow); }
-
-    .vp-icon {
-      width: 46px; height: 46px; border-radius: 11px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; margin-bottom: 18px;
-    }
-
-    .vp-card h3 {
-      font-size: 16px; font-weight: 700; color: var(--text);
-      letter-spacing: -0.2px; margin-bottom: 10px;
-    }
-
-    .vp-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
-
-    /* ── PRODUCT / API ── */
-    .product-grid {
-      display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px;
-      align-items: start;
-    }
-
-    .feature-list { display: flex; flex-direction: column; gap: 16px; }
-
-    .feature-row {
-      display: flex; gap: 16px; align-items: flex-start;
-      padding: 20px; background: var(--card);
-      border: 1px solid var(--border); border-radius: var(--radius);
-    }
-
-    .feature-icon-wrap {
-      width: 40px; height: 40px; border-radius: 9px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 19px; flex-shrink: 0;
-    }
-
-    .feature-text h4 {
-      font-size: 14px; font-weight: 700; color: var(--text);
-      margin-bottom: 4px; letter-spacing: -0.1px;
-      font-family: 'Courier New', monospace;
-    }
-
-    .feature-text p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-    /* Code block */
-    .code-wrap {
-      background: #0d1626; border-radius: 14px;
-      overflow: hidden; box-shadow: var(--shadow-md);
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .code-titlebar {
-      background: #16213a; padding: 13px 18px;
-      display: flex; align-items: center; justify-content: space-between;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .code-dots { display: flex; gap: 7px; }
-    .code-dot { width: 11px; height: 11px; border-radius: 50%; }
-    .code-fname { font-size: 12px; color: #4a6080; font-family: 'Courier New', monospace; }
-
-    .code-body {
-      padding: 26px 24px;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 13px; line-height: 1.75;
-      color: #cbd5e1; overflow-x: auto;
-    }
-
-    .ck { color: #f472b6; }   /* keyword */
-    .cs { color: #86efac; }   /* string */
-    .cm { color: #3d5a80; }   /* comment */
-    .cn { color: #fbbf24; }   /* number */
-    .cp { color: #93c5fd; }   /* key/property */
-
-    .api-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-
-    .atag {
-      padding: 5px 11px; border-radius: 100px;
-      font-size: 12px; font-weight: 600;
-    }
-
-    .atag-green { background: var(--green-bg); color: var(--green); border: 1px solid rgba(15,110,86,0.2); }
-    .atag-blue  { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(24,95,165,0.2); }
-    .atag-pink  { background: var(--pink-bg); color: var(--pink); border: 1px solid rgba(219,39,119,0.2); }
-
-    /* ── BENCHMARKS ── */
-    .bench-table {
-      width: 100%; border-collapse: collapse;
-      background: white; border-radius: var(--radius);
-      overflow: hidden; border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .bench-table th {
-      padding: 13px 20px; text-align: left;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.6px;
-      text-transform: uppercase; color: var(--muted);
-      background: var(--card2); border-bottom: 1px solid var(--border);
-    }
-
-    .bench-table td {
-      padding: 15px 20px; font-size: 14px; color: var(--text);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .bench-table tr:last-child td { border-bottom: none; }
-    .bench-table tr.valsea-row { background: rgba(219,39,119,0.025); }
-    .bench-table tr.valsea-row td { font-weight: 600; }
-
-    .b-good { color: #16a34a; font-weight: 700; }
-    .b-bad  { color: #dc2626; }
-    .b-na   { color: var(--dim); font-style: italic; font-weight: 400; }
-    .b-ok   { color: #ea580c; }
-
-    .valsea-label {
-      display: inline-flex; align-items: center; gap: 6px;
-    }
-
-    .exclusive-badge {
-      display: inline-block; font-size: 10px; font-weight: 700;
-      padding: 2px 7px; border-radius: 100px;
-      background: var(--pink-bg); color: var(--pink);
-      border: 1px solid rgba(219,39,119,0.22);
-      letter-spacing: 0.3px;
-    }
-
     /* ── CORRIDORS ── */
     .corridor-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      margin-bottom: 32px;
     }
 
     .c-card {
-      border: 1px solid var(--border); border-radius: 16px;
+      border: 1px solid var(--border); border-radius: 14px;
       overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.15s, box-shadow 0.15s;
     }
 
-    .c-header {
-      padding: 30px 30px 24px; color: white;
-    }
+    .c-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    .c-header { padding: 24px 24px 20px; color: white; }
 
     .c-eyebrow {
-      font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
       text-transform: uppercase; color: rgba(255,255,255,0.55);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .c-title {
-      font-size: 26px; font-weight: 900; letter-spacing: -0.5px;
-      color: white; margin-bottom: 6px;
+      font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+      color: white; margin-bottom: 4px;
     }
 
-    .c-meta { font-size: 13px; color: rgba(255,255,255,0.55); }
+    .c-meta { font-size: 12px; color: rgba(255,255,255,0.55); }
 
-    .c-body { padding: 24px 30px; background: white; }
+    .c-body { padding: 20px 24px; background: white; }
 
-    .c-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 18px; }
-
-    .c-usecases { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 20px; }
-
-    .c-usecases li {
-      display: flex; gap: 10px; align-items: flex-start;
-      font-size: 13.5px; color: var(--text); line-height: 1.5;
+    .c-verticals {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;
     }
 
-    .c-usecases li::before {
-      content: '';
-      width: 5px; height: 5px; background: var(--pink);
-      border-radius: 50%; flex-shrink: 0; margin-top: 8px;
-    }
-
-    .c-langs { display: flex; flex-wrap: wrap; gap: 7px; }
-
-    .lang-chip {
-      padding: 4px 10px; border-radius: 100px; font-size: 12px;
+    .c-vtag {
+      padding: 4px 10px; border-radius: 100px; font-size: 11px;
       font-weight: 600; background: var(--card2); color: var(--muted);
       border: 1px solid var(--border);
     }
 
-    .lang-chip-exclusive {
-      background: var(--pink-bg); color: var(--pink);
-      border-color: rgba(219,39,119,0.25);
+    .c-score {
+      font-size: 12px; color: var(--dim); font-weight: 500;
     }
 
-    /* ── WHY PARTNER ── */
-    .why-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    .c-score strong { color: var(--pink); font-weight: 800; }
+
+    /* Expansion corridor mini cards */
+    .expansion-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
     }
 
-    .why-card {
-      padding: 30px; border: 1px solid var(--border);
-      border-radius: var(--radius); background: white;
+    .exp-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px;
+      transition: transform 0.15s;
     }
 
-    .why-num {
-      font-size: 40px; font-weight: 900;
-      color: rgba(219,39,119,0.12); letter-spacing: -2px;
-      line-height: 1; margin-bottom: 14px;
+    .exp-card:hover { transform: translateY(-2px); }
+
+    .exp-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--dim); margin-bottom: 6px;
     }
 
-    .why-card h3 {
-      font-size: 17px; font-weight: 700; color: var(--text);
-      letter-spacing: -0.3px; margin-bottom: 10px;
+    .exp-name {
+      font-size: 14px; font-weight: 700; color: var(--text);
+      margin-bottom: 4px; letter-spacing: -0.2px;
     }
 
-    .why-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .exp-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-    /* ── PARTNER TIERS ── */
+    /* ── VERTICALS ── */
+    .vert-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+
+    .vert-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px;
+      transition: box-shadow 0.2s, transform 0.15s;
+      cursor: default;
+    }
+
+    .vert-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+
+    .vert-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; margin-bottom: 16px;
+    }
+
+    .vert-card h3 {
+      font-size: 15px; font-weight: 700; color: var(--text);
+      letter-spacing: -0.2px; margin-bottom: 8px;
+    }
+
+    .vert-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .vert-corridors {
+      margin-top: 12px; display: flex; flex-wrap: wrap; gap: 5px;
+    }
+
+    .vert-corridors span {
+      font-size: 10px; font-weight: 600; padding: 3px 8px;
+      border-radius: 100px; background: var(--pink-bg);
+      color: var(--pink); border: 1px solid rgba(219,39,119,0.2);
+    }
+
+    /* ── PERKS ── */
+    .perks-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+    }
+
+    .perk-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      display: flex; gap: 18px; align-items: flex-start;
+    }
+
+    .perk-icon {
+      width: 48px; height: 48px; border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+
+    .perk-card h3 {
+      font-size: 16px; font-weight: 700; color: var(--text);
+      margin-bottom: 6px; letter-spacing: -0.2px;
+    }
+
+    .perk-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* Promo code highlight */
+    .promo-highlight {
+      background: linear-gradient(135deg, rgba(219,39,119,0.04), rgba(124,58,237,0.04));
+      border: 1.5px solid rgba(219,39,119,0.2);
+      border-radius: 14px; padding: 32px;
+      margin-top: 32px; text-align: center;
+    }
+
+    .promo-highlight h3 {
+      font-size: 20px; font-weight: 800; color: var(--text);
+      margin-bottom: 10px; letter-spacing: -0.5px;
+    }
+
+    .promo-highlight p {
+      font-size: 14px; color: var(--muted); max-width: 520px;
+      margin: 0 auto; line-height: 1.65;
+    }
+
+    .promo-code-example {
+      display: inline-block; margin-top: 18px;
+      background: var(--text); color: #f9a8d4;
+      font-family: 'Courier New', monospace; font-size: 15px; font-weight: 700;
+      padding: 12px 28px; border-radius: 8px; letter-spacing: 1px;
+    }
+
+    /* ── TIERS ── */
     .tier-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
     }
@@ -470,31 +357,119 @@
 
     .check-green { color: var(--green); font-size: 15px; font-weight: 700; flex-shrink: 0; }
 
-    /* ── QUICKSTART ── */
-    .qs-grid {
-      display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px;
+    /* ── API PRODUCT ── */
+    .code-wrap {
+      background: #0d1626; border-radius: 14px;
+      overflow: hidden; box-shadow: var(--shadow-md);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .code-titlebar {
+      background: #16213a; padding: 13px 18px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .code-dots { display: flex; gap: 7px; }
+    .code-dot { width: 11px; height: 11px; border-radius: 50%; }
+    .code-fname { font-size: 12px; color: #4a6080; font-family: 'Courier New', monospace; }
+
+    .code-body {
+      padding: 26px 24px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 13px; line-height: 1.75;
+      color: #cbd5e1; overflow-x: auto;
+    }
+
+    .ck { color: #f472b6; }
+    .cs { color: #86efac; }
+    .cm { color: #3d5a80; }
+    .cn { color: #fbbf24; }
+    .cp { color: #93c5fd; }
+
+    .api-grid {
+      display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px;
       align-items: start;
     }
 
-    .qs-steps { display: flex; flex-direction: column; gap: 28px; }
+    .api-features { display: flex; flex-direction: column; gap: 14px; }
 
-    .qs-step { display: flex; gap: 18px; align-items: flex-start; }
-
-    .qs-num {
-      width: 34px; height: 34px; background: var(--pink);
-      color: white; border-radius: 50%; display: flex;
-      align-items: center; justify-content: center;
-      font-size: 14px; font-weight: 700; flex-shrink: 0;
+    .api-feat {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 16px; background: var(--card);
+      border: 1px solid var(--border); border-radius: 10px;
     }
 
-    .qs-step h4 {
-      font-size: 16px; font-weight: 700; color: var(--text);
-      margin-bottom: 5px; letter-spacing: -0.2px;
+    .api-feat-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
     }
 
-    .qs-step p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .api-feat h4 {
+      font-size: 13px; font-weight: 700; color: var(--text);
+      margin-bottom: 3px; font-family: 'Courier New', monospace;
+    }
+
+    .api-feat p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    .api-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+
+    .atag {
+      padding: 5px 11px; border-radius: 100px;
+      font-size: 12px; font-weight: 600;
+    }
+
+    .atag-green { background: var(--green-bg); color: var(--green); border: 1px solid rgba(15,110,86,0.2); }
+    .atag-blue  { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(24,95,165,0.2); }
+    .atag-pink  { background: var(--pink-bg); color: var(--pink); border: 1px solid rgba(219,39,119,0.2); }
 
     /* ── CONTACT / CTA ── */
+    /* ── LANGUAGE COVERAGE ── */
+    .lang-region-row {
+      display: flex; align-items: flex-start; gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lang-region-row:last-child { border-bottom: none; }
+
+    .lang-region-label {
+      flex-shrink: 0; width: 160px;
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--pink);
+      padding-top: 6px;
+    }
+
+    .lang-pills {
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+
+    .lang-pill-tag {
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 13px; font-weight: 500;
+      background: var(--card2); color: var(--text);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .lang-pill-tag.highlight {
+      background: var(--pink-bg); color: var(--pink);
+      border-color: rgba(219,39,119,0.25); font-weight: 600;
+    }
+
+    .lang-coverage-wrap {
+      background: white; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 12px 32px;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 980px) {
+      .lang-region-row { flex-direction: column; gap: 10px; }
+      .lang-region-label { width: auto; }
+      .lang-coverage-wrap { padding: 12px 16px; }
+    }
+
     .contact-section {
       background: linear-gradient(140deg, #080e1a 0%, #0f1d36 50%, #0a1020 100%);
       color: white; text-align: center;
@@ -538,46 +513,6 @@
     .footer-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; }
     .footer-links a:hover { color: rgba(255,255,255,0.65); }
 
-    /* ── LANGUAGE COVERAGE ── */
-    .lang-status-hdr {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 11px; font-weight: 800; color: var(--text);
-      margin: 40px 0 16px; text-transform: uppercase; letter-spacing: 2px;
-    }
-    .lang-status-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-    .lang-region-row {
-      display: grid; grid-template-columns: 130px 1fr;
-      gap: 16px; padding: 14px 20px;
-      background: white; border: 1px solid var(--border);
-      border-radius: 10px; margin-bottom: 8px; align-items: start;
-    }
-    .lang-region-name {
-      font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--pink); padding-top: 5px;
-    }
-    .lang-chips-row { display: flex; flex-wrap: wrap; gap: 6px; }
-    .lc {
-      padding: 4px 10px; border-radius: 100px;
-      font-size: 12px; font-weight: 500;
-      background: var(--card2); color: var(--muted);
-      border: 1px solid var(--border);
-    }
-    .lc.lc-key {
-      background: rgba(219,39,119,0.07); color: var(--pink);
-      border-color: rgba(219,39,119,0.2); font-weight: 600;
-    }
-    .lc.lc-soon {
-      background: transparent; color: var(--dim);
-      border: 1px dashed #cbd5e1;
-    }
-    .lang-note-text {
-      font-size: 12px; color: var(--dim); margin: 4px 0 14px;
-      font-style: italic;
-    }
-    @media (max-width: 980px) {
-      .lang-region-row { grid-template-columns: 1fr; gap: 8px; }
-    }
-
     /* ── DIVIDER ── */
     hr { border: none; height: 1px; background: var(--border); margin: 0; }
 
@@ -587,50 +522,34 @@
       .nav-links { display: none; }
       .nav-portal-tag { display: none; }
       .nav-wordmark { font-size: 17px; }
-      .hero { padding: 48px 20px 40px; }
-      .hero h1 { font-size: 32px; letter-spacing: -1.2px; }
-      .hero-sub { font-size: 15px; }
-      .hero-stats { gap: 24px; margin-top: 40px; padding-top: 28px; }
-      .stat-num { font-size: 26px; }
-      .stat-label { font-size: 12px; }
       section { padding: 48px 20px; }
       .section-h2 { font-size: 28px; letter-spacing: -0.8px; }
       .section-lead { font-size: 15px; }
-      .vp-grid, .product-grid, .corridor-grid, .why-grid, .tier-grid, .qs-grid {
+      .corridor-grid, .vert-grid, .perks-grid, .tier-grid, .api-grid {
         grid-template-columns: 1fr;
       }
-      .product-grid { gap: 32px; }
-      .qs-grid { gap: 32px; }
+      .expansion-grid { grid-template-columns: 1fr 1fr; }
+      .api-grid { gap: 28px; }
       .code-body { font-size: 11px; padding: 18px 16px; }
-      .bench-table { font-size: 13px; }
-      .bench-table th, .bench-table td { padding: 10px 12px; }
       .tier-card { padding: 24px 20px; }
       .contact-section { padding: 48px 20px; }
       .contact-methods { flex-direction: column; align-items: stretch; }
       .contact-method { justify-content: center; }
       footer { padding: 20px 16px; flex-direction: column; text-align: center; gap: 12px; }
       .footer-links { justify-content: center; }
-      .hero-ctas { flex-direction: column; }
-      .hero-ctas .btn { width: 100%; justify-content: center; }
       .contact-ctas { flex-direction: column; align-items: stretch; }
       .contact-ctas .btn { width: 100%; justify-content: center; }
-      .c-header { padding: 24px 20px 20px; }
-      .c-title { font-size: 22px; }
-      .c-body { padding: 20px; }
-      .why-card { padding: 24px 20px; }
-      .why-num { font-size: 32px; }
-      .lang-region-row { padding: 12px 14px; }
-      .lang-region-name { font-size: 10px; }
-      .lc { font-size: 11px; padding: 3px 8px; }
+      .c-header { padding: 20px; }
+      .c-title { font-size: 18px; }
+      .c-body { padding: 16px 20px; }
+      .perk-card { flex-direction: column; gap: 12px; }
     }
 
     @media (max-width: 480px) {
-      .hero h1 { font-size: 26px; letter-spacing: -1px; }
-      .hero-stats { flex-direction: column; gap: 20px; }
+      .expansion-grid { grid-template-columns: 1fr; }
       .nav-right .btn { padding: 8px 14px; font-size: 12px; }
       .lang-pill button { padding: 6px 12px; font-size: 12px; }
       .section-h2 { font-size: 24px; }
-      .bench-table { display: block; overflow-x: auto; }
     }
   </style>
 </head>
@@ -643,17 +562,19 @@
   <a href="#" class="nav-brand">
     <div class="nav-logomark">VS</div>
     <span class="nav-wordmark">VALSEA</span>
-    <span class="nav-portal-tag en">Partner Portal</span>
-    <span class="nav-portal-tag zh">合作伙伴门户</span>
+    <span class="nav-portal-tag en">Partner Program</span>
+    <span class="nav-portal-tag zh">合作伙伴计划</span>
   </a>
 
   <ul class="nav-links">
-    <li><a href="#product"><span class="en">API Product</span><span class="zh">API 产品</span></a></li>
-    <li><a href="#benchmarks"><span class="en">Benchmarks</span><span class="zh">性能对比</span></a></li>
+    <li><a href="#corridors"><span class="en">Markets</span><span class="zh">市场</span></a></li>
+    <li><a href="#verticals"><span class="en">Verticals</span><span class="zh">行业</span></a></li>
+    <li><a href="#perks"><span class="en">Perks</span><span class="zh">权益</span></a></li>
+    <li><a href="#tiers"><span class="en">Tiers</span><span class="zh">等级</span></a></li>
+    <li><a href="affiliate.html"><span class="en">Affiliates</span><span class="zh">推广联盟</span></a></li>
+    <li><a href="#api"><span class="en">API</span><span class="zh">API</span></a></li>
     <li><a href="#languages"><span class="en">Languages</span><span class="zh">语言</span></a></li>
-    <li><a href="#corridors"><span class="en">Corridors</span><span class="zh">贸易走廊</span></a></li>
-    <li><a href="#partner-program"><span class="en">Partner Program</span><span class="zh">合作计划</span></a></li>
-    <li><a href="#contact"><span class="en">Contact</span><span class="zh">联系我们</span></a></li>
+    <li><a href="#contact"><span class="en">Apply</span><span class="zh">申请</span></a></li>
   </ul>
 
   <div class="nav-right">
@@ -662,604 +583,269 @@
       <button id="btn-zh" onclick="setLang('zh')">中文</button>
     </div>
     <a href="#contact" class="btn btn-primary">
-      <span class="en">Partner with Us</span>
-      <span class="zh">申请合作</span>
+      <span class="en">Become a Partner</span>
+      <span class="zh">成为合作伙伴</span>
     </a>
   </div>
 </nav>
 
 
 <!-- ════════════════════════════════════
-     HERO
-════════════════════════════════════ -->
-<div class="hero">
-  <div class="hero-badge">
-    <div class="hero-badge-dot"></div>
-    <span class="en">China Distribution Partner Program — 2025</span>
-    <span class="zh">中国分销合作伙伴计划 — 2025</span>
-  </div>
-
-  <h1 class="en">The <span class="accent">Speech Intelligence</span> Infrastructure for How the World Truly Speaks</h1>
-  <h1 class="zh">为世界真实语言方式构建的<span class="accent">语音智能</span>基础设施</h1>
-
-  <p class="hero-sub en">Built for the trade corridors global speech engines cannot serve. VALSEA converts accent-heavy, code-switched regional speech into structured, workflow-ready outputs — powering China–Africa, China–Southeast Asia, and China–MENA corridors.</p>
-  <p class="hero-sub zh">专为全球主流语音引擎无法处理的贸易走廊而生。VALSEA 将带口音、语码转换的区域语音转化为结构化、可直接接入工作流的输出——为中非、中国–东南亚及中国–中东贸易走廊持续赋能。</p>
-
-  <div class="hero-ctas">
-    <a href="#contact" class="btn btn-primary" style="padding:13px 30px;font-size:15px;">
-      <span class="en">Become a Distribution Partner</span>
-      <span class="zh">成为分销合作伙伴</span>
-    </a>
-    <a href="#product" class="btn btn-outline" style="padding:13px 30px;font-size:15px;">
-      <span class="en">Explore the API →</span>
-      <span class="zh">了解 API 产品 →</span>
-    </a>
-  </div>
-
-  <div class="hero-stats">
-    <div>
-      <div class="stat-num">10%</div>
-      <div class="stat-label en">WER on Vietnamese<br><span style="color:var(--dim);font-size:12px;">vs. 20–40% for Google / Azure / AWS</span></div>
-      <div class="stat-label zh">越南语词错误率<br><span style="color:var(--dim);font-size:12px;">Google / Azure / AWS 为 20–40%</span></div>
-    </div>
-    <div>
-      <div class="stat-num">220+</div>
-      <div class="stat-label en">African accent profiles supported</div>
-      <div class="stat-label zh">支持非洲口音种类</div>
-    </div>
-    <div>
-      <div class="stat-num">$496B+</div>
-      <div class="stat-label en">Combined China corridor trade volume<br><span style="color:var(--dim);font-size:12px;">Africa $296B · Southeast Asia $200B+</span></div>
-      <div class="stat-label zh">中国走廊合计贸易额<br><span style="color:var(--dim);font-size:12px;">非洲 2960 亿 · 东南亚 2000 亿以上</span></div>
-    </div>
-    <div>
-      <div class="stat-num">0</div>
-      <div class="stat-label en">Competitors with Mandarin ↔ Swahili<br><span style="color:var(--dim);font-size:12px;">across Google, Azure, and AWS</span></div>
-      <div class="stat-label zh">具备普通话↔斯瓦希里语能力的竞争对手<br><span style="color:var(--dim);font-size:12px;">Google、Azure 及 AWS 均不支持</span></div>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<!-- ════════════════════════════════════
-     ABOUT / VALUE PROPS
-════════════════════════════════════ -->
-<section class="bg-card">
-  <div class="section-inner">
-    <div class="section-eyebrow en">What is VALSEA</div>
-    <div class="section-eyebrow zh">关于 VALSEA</div>
-    <div class="section-h2 en">Speech-to-Meaning for the Real Economy</div>
-    <div class="section-h2 zh">面向实体经济的"语音→语义"解决方案</div>
-    <p class="section-lead en">Google, Azure, and AWS were built for English-dominant speech. VALSEA is built for the 5+ billion people across Asia, the Middle East, and Africa who conduct business in mixed languages, regional accents, and code-switched conversations — the world's fastest-growing trade corridors.</p>
-    <p class="section-lead zh">Google、Azure 和 AWS 专为英语主导的语音场景构建。VALSEA 则专为亚洲、中东和非洲 50 亿以上使用混合语言、地区口音和语码转换进行商业沟通的人口而生——这正是全球增长最快的贸易走廊所在。</p>
-
-    <div class="vp-grid">
-      <div class="vp-card">
-        <div class="vp-icon" style="background:var(--pink-bg);">🎙️</div>
-        <h3 class="en">Accent-Aware ASR</h3>
-        <h3 class="zh">口音感知语音识别</h3>
-        <p class="en">Our ASR layer is fine-tuned on regional Southeast Asian and African speech — including Singlish, Manglish, Bahasa Indonesia, Vietnamese, Thai, Taglish, and 220+ African accent profiles. Where global engines produce 30–50% error rates, VALSEA achieves 11–18%.</p>
-        <p class="zh">我们的 ASR 层针对东南亚和非洲区域语音进行精细调优，覆盖新加坡式英语、马来式英语、印度尼西亚语、越南语、泰语、菲律宾式英语及 220 余种非洲口音。全球引擎错误率达 30–50% 之处，VALSEA 仅为 11–18%。</p>
-      </div>
-      <div class="vp-card">
-        <div class="vp-icon" style="background:var(--green-bg);">🧠</div>
-        <h3 class="en">Semantic Understanding Layer</h3>
-        <h3 class="zh">语义理解层</h3>
-        <p class="en">Raw transcription is not enough. VALSEA's semantic layer transforms speech into meaning: extracting intent, topics, entities, and action items from business conversations — even across multiple languages within a single utterance.</p>
-        <p class="zh">原始转录远远不够。VALSEA 的语义层将语音转化为语义：从商业对话中提取意图、主题、实体及行动项——即便同一句话中混用多种语言，也能精准处理。</p>
-      </div>
-      <div class="vp-card">
-        <div class="vp-icon" style="background:var(--blue-bg);">⚡</div>
-        <h3 class="en">Workflow-Ready Outputs</h3>
-        <h3 class="zh">工作流就绪输出</h3>
-        <p class="en">VALSEA delivers outputs your enterprise customers plug directly into existing systems: meeting notes, compliance transcripts, .srt subtitle files, and structured JSON — not raw text that requires further processing.</p>
-        <p class="zh">VALSEA 输出可直接接入企业现有系统：会议纪要、合规转录文件、.srt 字幕及结构化 JSON——而非需要二次处理的原始文本。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════
-     API PRODUCT
-════════════════════════════════════ -->
-<section id="product">
-  <div class="section-inner">
-    <div class="section-eyebrow en">API Product</div>
-    <div class="section-eyebrow zh">API 产品</div>
-    <div class="section-h2 en">VALSEA Speech API</div>
-    <div class="section-h2 zh">VALSEA 语音 API</div>
-    <p class="section-lead en">A single REST API for transcription, semantic extraction, and structured output — with China data residency deployment options for full regulatory compliance.</p>
-    <p class="section-lead zh">一个统一的 REST API，覆盖转录、语义提取及结构化输出——支持数据中国境内存储部署，满足完整监管合规要求。</p>
-
-    <div class="product-grid">
-      <div class="feature-list">
-
-        <div class="feature-row">
-          <div class="feature-icon-wrap" style="background:var(--pink-bg);">🎯</div>
-          <div class="feature-text">
-            <h4>POST /v1/transcribe</h4>
-            <p class="en">Real-time and batch speech-to-text with accent profile selection. Supports audio streams and file URLs. Real-time latency &lt;500ms. Outputs raw transcript + confidence scores per segment.</p>
-            <p class="zh">实时及批量语音转文字，支持口音配置选择，兼容音频流与文件 URL。实时模式延迟低于 500 毫秒，输出原始转录文本及逐段置信度评分。</p>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="feature-icon-wrap" style="background:var(--green-bg);">💡</div>
-          <div class="feature-text">
-            <h4>POST /v1/understand</h4>
-            <p class="en">Semantic extraction on transcribed text. Returns structured JSON: topics, action items, named entities, sentiment, and speaker attribution. Handles mixed-language input natively.</p>
-            <p class="zh">对转录文本进行语义提取，返回结构化 JSON：主题、行动项、命名实体、情感分析及说话人归属。原生支持混合语言输入。</p>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="feature-icon-wrap" style="background:var(--blue-bg);">📄</div>
-          <div class="feature-text">
-            <h4>POST /v1/output</h4>
-            <p class="en">Generate formatted deliverables: meeting notes, compliance reports, .srt subtitles, or custom document templates. Target language is configurable — output in Mandarin, English, or both.</p>
-            <p class="zh">生成格式化交付物：会议纪要、合规报告、.srt 字幕或自定义文档模板。目标语言可配置——支持输出为普通话、英语或两者皆有。</p>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="feature-icon-wrap" style="background:rgba(124,58,237,0.08);">🌐</div>
-          <div class="feature-text">
-            <h4 style="font-family:'Inter',sans-serif;"><span class="en">Language Coverage</span><span class="zh">语言覆盖</span></h4>
-            <p class="en">99 languages including Mandarin, Cantonese, Swahili, Arabic, Persian, Indonesian, Vietnamese, Thai, Hindi, Bengali, Tamil, and more across East Asia, Southeast Asia, South Asia, the Middle East, Africa, and Europe. <strong>Mandarin↔Swahili pipeline: exclusive to VALSEA.</strong> <a href="#languages" style="color:var(--pink);font-weight:600;">See full language list →</a></p>
-            <p class="zh">99 种语言，含普通话、粤语、斯瓦希里语、阿拉伯语、波斯语、印度尼西亚语、越南语、泰语、印地语、孟加拉语、泰米尔语等，覆盖东亚、东南亚、南亚、中东、非洲及欧洲。<strong>普通话↔斯瓦希里语双向管道：VALSEA 独有。</strong> <a href="#languages" style="color:var(--pink);font-weight:600;">查看完整语言列表 →</a></p>
-          </div>
-        </div>
-
-      </div>
-
-      <div>
-        <div class="code-wrap">
-          <div class="code-titlebar">
-            <div class="code-dots">
-              <div class="code-dot" style="background:#ff5f57;"></div>
-              <div class="code-dot" style="background:#ffbd2e;"></div>
-              <div class="code-dot" style="background:#28c840;"></div>
-            </div>
-            <div class="code-fname">china_africa_example.py</div>
-          </div>
-          <div class="code-body"><span class="cm"># VALSEA Speech API — China↔Africa Corridor</span>
-<span class="cm"># Mandarin source → Swahili + English output</span>
-
-<span class="ck">import</span> requests
-
-response = requests.post(
-  <span class="cs">"https://api.valsea.ai/v1/transcribe"</span>,
-  headers={
-    <span class="cp">"Authorization"</span>: <span class="cs">"Bearer YOUR_API_KEY"</span>
-  },
-  json={
-    <span class="cp">"audio_url"</span>: <span class="cs">"https://..."</span>,
-    <span class="cp">"source_language"</span>: <span class="cs">"zh-cmn"</span>,
-    <span class="cp">"target_languages"</span>: [<span class="cs">"sw"</span>, <span class="cs">"en"</span>],
-    <span class="cp">"output_formats"</span>: [
-      <span class="cs">"transcript"</span>,
-      <span class="cs">"meeting_notes"</span>,
-      <span class="cs">"srt"</span>
-    ],
-    <span class="cp">"corridor"</span>: <span class="cs">"china-africa"</span>
-  }
-)
-
-data = response.json()
-<span class="cm"># → transcript (zh + sw + en)</span>
-<span class="cm"># → meeting_notes (structured JSON)</span>
-<span class="cm"># → srt_url (subtitle file)</span>
-print(data[<span class="cs">"transcript"</span>][<span class="cs">"sw"</span>])
-print(data[<span class="cs">"meeting_notes"</span>][<span class="cs">"action_items"</span>])</div>
-        </div>
-
-        <div class="api-tags">
-          <span class="atag atag-green en">✓ REST API</span>
-          <span class="atag atag-green zh">✓ REST API</span>
-          <span class="atag atag-green en">✓ Webhook Support</span>
-          <span class="atag atag-green zh">✓ Webhook 支持</span>
-          <span class="atag atag-blue en">✓ China Data Residency</span>
-          <span class="atag atag-blue zh">✓ 数据境内存储</span>
-          <span class="atag atag-pink en">✓ 99.9% SLA</span>
-          <span class="atag atag-pink zh">✓ 99.9% SLA</span>
-          <span class="atag atag-pink en">✓ SDK: Python · Node · Go</span>
-          <span class="atag atag-pink zh">✓ SDK: Python · Node · Go</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr>
-
-<!-- ════════════════════════════════════
-     BENCHMARKS
-════════════════════════════════════ -->
-<section id="benchmarks" class="bg-card">
-  <div class="section-inner">
-    <div class="section-eyebrow en">Performance Benchmarks</div>
-    <div class="section-eyebrow zh">性能基准对比</div>
-    <div class="section-h2 en">Built Where Global Engines Break</div>
-    <div class="section-h2 zh">在全球引擎力不从心之处构建优势</div>
-    <p class="section-lead en">VALSEA's performance benchmarks on the regional languages that matter most for China's trade corridors — where standard ASR platforms have historically struggled.</p>
-    <p class="section-lead zh">以下为 VALSEA 在中国贸易走廊核心区域语言上的性能基准——这些正是标准 ASR 平台长期表现欠佳之处。</p>
-
-    <table class="bench-table">
-      <thead>
-        <tr>
-          <th><span class="en">Provider</span><span class="zh">服务商</span></th>
-          <th><span class="en">Vietnamese (WER)</span><span class="zh">越南语（词错误率）</span></th>
-          <th><span class="en">Mandarin ↔ Swahili</span><span class="zh">普通话 ↔ 斯瓦希里语</span></th>
-          <th><span class="en">SEA Code-Switching</span><span class="zh">东南亚语码转换</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="valsea-row">
-          <td>
-            <div class="valsea-label">
-              VALSEA
-            </div>
-          </td>
-          <td class="b-good">10%</td>
-          <td>
-            <span style="color:#16a34a;font-size:17px;">✓</span>
-            <span class="b-good en"> Available</span>
-            <span class="b-good zh"> 支持</span>
-          </td>
-          <td class="b-good en">Strong</td>
-          <td class="b-good zh">优秀</td>
-        </tr>
-        <tr>
-          <td>Google Cloud Speech</td>
-          <td class="b-bad">20–35%</td>
-          <td>
-            <span style="color:var(--dim);font-size:16px;">✗</span>
-            <span class="b-na en"> Not available</span>
-            <span class="b-na zh"> 不支持</span>
-          </td>
-          <td class="b-ok en">Partial</td>
-          <td class="b-ok zh">有限</td>
-        </tr>
-        <tr>
-          <td>Azure Cognitive Services</td>
-          <td class="b-bad">25–40%</td>
-          <td>
-            <span style="color:var(--dim);font-size:16px;">✗</span>
-            <span class="b-na en"> Not available</span>
-            <span class="b-na zh"> 不支持</span>
-          </td>
-          <td class="b-ok en">Partial</td>
-          <td class="b-ok zh">有限</td>
-        </tr>
-        <tr>
-          <td>AWS Transcribe</td>
-          <td class="b-bad">30–45%</td>
-          <td>
-            <span style="color:var(--dim);font-size:16px;">✗</span>
-            <span class="b-na en"> Not available</span>
-            <span class="b-na zh"> 不支持</span>
-          </td>
-          <td class="b-bad en">Poor</td>
-          <td class="b-bad zh">较差</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p style="font-size:12px;color:var(--dim);margin-top:14px;" class="en">WER = Word Error Rate. Lower is better. Vietnamese WER benchmarked on VALSEA internal evaluation data. Competitor ranges are estimates based on publicly available benchmarks. Mandarin↔Swahili availability verified Q2 2025 across listed providers.</p>
-    <p style="font-size:12px;color:var(--dim);margin-top:14px;" class="zh">WER = 词错误率，越低越好。越南语数据基于 VALSEA 内部评估数据。竞争对手数据为基于公开基准的估算值。普通话↔斯瓦希里语可用性已于 2025 年 Q2 对上述服务商逐一验证。</p>
-  </div>
-</section>
-
-
-<!-- ════════════════════════════════════
-     LANGUAGE COVERAGE
-════════════════════════════════════ -->
-<section id="languages">
-  <div class="section-inner">
-    <div class="section-eyebrow en">Language Coverage</div>
-    <div class="section-eyebrow zh">语言覆盖</div>
-    <div class="section-h2 en">99 Supported. 144+ on Roadmap.</div>
-    <div class="section-h2 zh">已支持 99 种，路线图覆盖 144+ 种语言</div>
-    <p class="section-lead en">VALSEA supports 99 languages today across East Asia, Southeast Asia, South Asia, Central Asia, the Middle East, Africa, Europe, and the Pacific — with 45 additional languages and regional variants on the active roadmap. Highlighted languages are supported today.</p>
-    <p class="section-lead zh">VALSEA 当前已支持 99 种语言，覆盖东亚、东南亚、南亚、中亚、中东、非洲、欧洲及太平洋地区，另有 45 种语言及区域变体纳入路线图持续推进。高亮语言为当前已支持语言。</p>
-
-    <!-- Legend -->
-    <div style="display:flex;gap:10px;align-items:center;margin-bottom:24px;flex-wrap:wrap;">
-      <span style="font-size:12px;color:var(--muted);font-weight:600;" class="en">Legend:</span>
-      <span style="font-size:12px;color:var(--muted);font-weight:600;" class="zh">图例：</span>
-      <span class="lc lc-key" style="cursor:default;font-size:11px;padding:3px 10px;">
-        <span class="en">✓ Supported</span><span class="zh">✓ 已支持</span>
-      </span>
-      <span class="lc" style="cursor:default;font-size:11px;padding:3px 10px;">
-        <span class="en">Coming Soon</span><span class="zh">即将支持</span>
-      </span>
-    </div>
-
-    <!-- East Asia -->
-    <div class="lang-region-row">
-      <div><div class="lang-region-name en">East Asia</div><div class="lang-region-name zh">东亚</div></div>
-      <div class="lang-chips-row">
-        <span class="lc lc-key"><span class="en">Mandarin Chinese</span><span class="zh">普通话</span></span>
-        <span class="lc lc-key"><span class="en">Cantonese</span><span class="zh">粤语</span></span>
-        <span class="lc lc-key"><span class="en">Japanese</span><span class="zh">日语</span></span>
-        <span class="lc lc-key"><span class="en">Korean</span><span class="zh">韩语</span></span>
-        <span class="lc lc-key"><span class="en">Mongolian</span><span class="zh">蒙古语</span></span>
-        <span class="lc"><span class="en">Cantonese (HK accent)</span><span class="zh">粤语（香港口音）</span></span>
-        <span class="lc"><span class="en">Cantonese (Guangdong accent)</span><span class="zh">粤语（广东口音）</span></span>
-        <span class="lc"><span class="en">Wu</span><span class="zh">吴语</span></span>
-        <span class="lc"><span class="en">Minnan</span><span class="zh">闽南语</span></span>
-        <span class="lc"><span class="en">Sichuan dialect</span><span class="zh">四川话</span></span>
-        <span class="lc"><span class="en">Shanghainese (Zhejiang)</span><span class="zh">上海话（浙江）</span></span>
-        <span class="lc"><span class="en">Cantonese (Fujian)</span><span class="zh">粤语（福建）</span></span>
-        <span class="lc"><span class="en">Dongbei dialect</span><span class="zh">东北话</span></span>
-        <span class="lc"><span class="en">Shandong dialect</span><span class="zh">山东话</span></span>
-        <span class="lc"><span class="en">Henan dialect</span><span class="zh">河南话</span></span>
-        <span class="lc"><span class="en">Hubei dialect</span><span class="zh">湖北话</span></span>
-        <span class="lc"><span class="en">Hunan dialect</span><span class="zh">湖南话</span></span>
-        <span class="lc"><span class="en">Jiangxi dialect</span><span class="zh">江西话</span></span>
-        <span class="lc"><span class="en">Yunnan dialect</span><span class="zh">云南话</span></span>
-        <span class="lc"><span class="en">Guizhou dialect</span><span class="zh">贵州话</span></span>
-        <span class="lc"><span class="en">Gansu dialect</span><span class="zh">甘肃话</span></span>
-        <span class="lc"><span class="en">Shaanxi dialect</span><span class="zh">陕西话</span></span>
-        <span class="lc"><span class="en">Shanxi dialect</span><span class="zh">山西话</span></span>
-        <span class="lc"><span class="en">Hebei dialect</span><span class="zh">河北话</span></span>
-        <span class="lc"><span class="en">Tianjin dialect</span><span class="zh">天津话</span></span>
-        <span class="lc"><span class="en">Ningxia dialect</span><span class="zh">宁夏话</span></span>
-        <span class="lc"><span class="en">Anhui dialect</span><span class="zh">安徽话</span></span>
-      </div>
-    </div>
-
-    <!-- Southeast Asia -->
-    <div class="lang-region-row">
-      <div><div class="lang-region-name en">Southeast Asia</div><div class="lang-region-name zh">东南亚</div></div>
-      <div class="lang-chips-row">
-        <span class="lc lc-key"><span class="en">Indonesian</span><span class="zh">印度尼西亚语</span></span>
-        <span class="lc lc-key"><span class="en">Malay</span><span class="zh">马来语</span></span>
-        <span class="lc lc-key"><span class="en">Vietnamese</span><span class="zh">越南语</span></span>
-        <span class="lc lc-key"><span class="en">Thai</span><span class="zh">泰语</span></span>
-        <span class="lc lc-key"><span class="en">Filipino</span><span class="zh">菲律宾语</span></span>
-        <span class="lc lc-key"><span class="en">Javanese</span><span class="zh">爪哇语</span></span>
-        <span class="lc lc-key"><span class="en">Cebuano</span><span class="zh">宿务语</span></span>
-        <span class="lc lc-key"><span class="en">Burmese</span><span class="zh">缅甸语</span></span>
-        <span class="lc lc-key"><span class="en">Khmer</span><span class="zh">高棉语</span></span>
-        <span class="lc lc-key"><span class="en">Lao</span><span class="zh">老挝语</span></span>
-        <span class="lc"><span class="en">Singlish</span><span class="zh">新加坡式英语</span></span>
-        <span class="lc"><span class="en">English (PH)</span><span class="zh">英语（菲律宾）</span></span>
-      </div>
-    </div>
-
-    <!-- South Asia -->
-    <div class="lang-region-row">
-      <div><div class="lang-region-name en">South Asia</div><div class="lang-region-name zh">南亚</div></div>
-      <div class="lang-chips-row">
-        <span class="lc lc-key"><span class="en">Hindi</span><span class="zh">印地语</span></span>
-        <span class="lc lc-key"><span class="en">Bengali</span><span class="zh">孟加拉语</span></span>
-        <span class="lc lc-key"><span class="en">Tamil</span><span class="zh">泰米尔语</span></span>
-        <span class="lc lc-key"><span class="en">Telugu</span><span class="zh">泰卢固语</span></span>
-        <span class="lc lc-key"><span class="en">Kannada</span><span class="zh">卡纳达语</span></span>
-        <span class="lc lc-key"><span class="en">Malayalam</span><span class="zh">马拉雅拉姆语</span></span>
-        <span class="lc lc-key"><span class="en">Marathi</span><span class="zh">马拉地语</span></span>
-        <span class="lc lc-key"><span class="en">Gujarati</span><span class="zh">古吉拉特语</span></span>
-        <span class="lc lc-key"><span class="en">Punjabi</span><span class="zh">旁遮普语</span></span>
-        <span class="lc lc-key"><span class="en">Urdu</span><span class="zh">乌尔都语</span></span>
-        <span class="lc lc-key"><span class="en">Nepali</span><span class="zh">尼泊尔语</span></span>
-        <span class="lc lc-key"><span class="en">Sindhi</span><span class="zh">信德语</span></span>
-        <span class="lc lc-key"><span class="en">Assamese</span><span class="zh">阿萨姆语</span></span>
-        <span class="lc lc-key"><span class="en">Odia</span><span class="zh">奥里亚语</span></span>
-        <span class="lc"><span class="en">Sinhala</span><span class="zh">僧伽罗语</span></span>
-        <span class="lc"><span class="en">Konkani</span><span class="zh">孔卡尼语</span></span>
-        <span class="lc"><span class="en">Kashmiri</span><span class="zh">克什米尔语</span></span>
-        <span class="lc"><span class="en">Maithili</span><span class="zh">迈蒂利语</span></span>
-        <span class="lc"><span class="en">Dogri</span><span class="zh">多格拉语</span></span>
-        <span class="lc"><span class="en">Sanskrit</span><span class="zh">梵语</span></span>
-        <span class="lc"><span class="en">Santali</span><span class="zh">桑塔利语</span></span>
-        <span class="lc"><span class="en">Manipuri</span><span class="zh">曼尼普尔语</span></span>
-        <span class="lc"><span class="en">Bodo</span><span class="zh">博多语</span></span>
-      </div>
-    </div>
-
-    <!-- Central Asia & Caucasus -->
-    <div class="lang-region-row">
-      <div><div class="lang-region-name en">Central Asia & Caucasus</div><div class="lang-region-name zh">中亚及高加索</div></div>
-      <div class="lang-chips-row">
-        <span class="lc lc-key"><span class="en">Kazakh</span><span class="zh">哈萨克语</span></span>
-        <span class="lc lc-key"><span class="en">Kyrgyz</span><span class="zh">吉尔吉斯语</span></span>
-        <span class="lc lc-key"><span class="en">Uzbek</span><span class="zh">乌兹别克语</span></span>
-        <span class="lc lc-key"><span class="en">Tajik</span><span class="zh">塔吉克语</span></span>
-        <span class="lc lc-key"><span class="en">Armenian</span><span class="zh">亚美尼亚语</span></span>
-        <span class="lc lc-key"><span class="en">Azerbaijani</span><span class="zh">阿塞拜疆语</span></span>
-        <span class="lc lc-key"><span class="en">Georgian</span><span class="zh">格鲁吉亚语</span></span>
-      </div>
-    </div>
-
-    <!-- Middle East -->
-    <div class="lang-region-row">
-      <div><div class="lang-region-name en">Middle East</div><div class="lang-region-name zh">中东</div></div>
-      <div class="lang-chips-row">
-        <span class="lc lc-key"><span class="en">Arabic</span><span class="zh">阿拉伯语</span></span>
-        <span class="lc lc-key"><span class="en">Persian (Farsi)</span><span class="zh">波斯语</span></span>
-        <span class="lc lc-key"><span class="en">Turkish</span><span class="zh">土耳其语</span></span>
-        <span class="lc lc-key"><span class="en">Hebrew</span><span class="zh">希伯来语</span></span>
-        <span class="lc lc-key"><span class="en">Kurdish</span><span class="zh">库尔德语</span></span>
-        <span class="lc lc-key"><span class="en">Pashto</span><span class="zh">普什图语</span></span>
-      </div>
-    </div>
-
-    <!-- Africa -->
-    <div class="lang-region-row">
-      <div><div class="lang-region-name en">Africa</div><div class="lang-region-name zh">非洲</div></div>
-      <div class="lang-chips-row">
-        <span class="lc lc-key"><span class="en">Swahili</span><span class="zh">斯瓦希里语</span></span>
-        <span class="lc lc-key"><span class="en">Hausa</span><span class="zh">豪萨语</span></span>
-        <span class="lc lc-key"><span class="en">Amharic</span><span class="zh">阿姆哈拉语</span></span>
-        <span class="lc lc-key"><span class="en">Igbo</span><span class="zh">伊博语</span></span>
-        <span class="lc lc-key"><span class="en">Afrikaans</span><span class="zh">南非荷兰语</span></span>
-        <span class="lc lc-key"><span class="en">Somali</span><span class="zh">索马里语</span></span>
-        <span class="lc lc-key"><span class="en">Wolof</span><span class="zh">沃洛夫语</span></span>
-        <span class="lc lc-key"><span class="en">Xhosa</span><span class="zh">科萨语</span></span>
-        <span class="lc lc-key"><span class="en">Zulu</span><span class="zh">祖鲁语</span></span>
-        <span class="lc lc-key"><span class="en">Shona</span><span class="zh">绍纳语</span></span>
-        <span class="lc lc-key"><span class="en">Lingala</span><span class="zh">林加拉语</span></span>
-        <span class="lc lc-key"><span class="en">Chichewa</span><span class="zh">奇切瓦语</span></span>
-        <span class="lc lc-key"><span class="en">Fulah</span><span class="zh">富拉语</span></span>
-        <span class="lc lc-key"><span class="en">Luganda</span><span class="zh">卢干达语</span></span>
-        <span class="lc lc-key"><span class="en">Luo</span><span class="zh">卢奥语</span></span>
-        <span class="lc lc-key"><span class="en">Northern Sotho</span><span class="zh">北索托语</span></span>
-        <span class="lc lc-key"><span class="en">Umbundu</span><span class="zh">翁本杜语</span></span>
-        <span class="lc lc-key"><span class="en">Kabuverdianu</span><span class="zh">佛得角克里奥尔语</span></span>
-        <span class="lc"><span class="en">Yoruba</span><span class="zh">约鲁巴语</span></span>
-        <span class="lc"><span class="en">Twi</span><span class="zh">契维语</span></span>
-        <span class="lc"><span class="en">Kinyarwanda</span><span class="zh">卢旺达语</span></span>
-        <span class="lc"><span class="en">Oromo</span><span class="zh">奥罗莫语</span></span>
-        <span class="lc"><span class="en">Tswana</span><span class="zh">茨瓦纳语</span></span>
-        <span class="lc"><span class="en">Sotho</span><span class="zh">索托语</span></span>
-        <span class="lc"><span class="en">Akan</span><span class="zh">阿坎语</span></span>
-        <span class="lc"><span class="en">Nigerian Pidgin</span><span class="zh">尼日利亚皮钦语</span></span>
-        <span class="lc"><span class="en">Bemba</span><span class="zh">本巴语</span></span>
-        <span class="lc"><span class="en">Nyankole</span><span class="zh">尼扬科莱语</span></span>
-        <span class="lc"><span class="en">Ga</span><span class="zh">加语</span></span>
-        <span class="lc"><span class="en">African-accented English</span><span class="zh">非洲口音英语</span></span>
-      </div>
-    </div>
-
-    <!-- Europe -->
-    <div class="lang-region-row">
-      <div><div class="lang-region-name en">Europe</div><div class="lang-region-name zh">欧洲</div></div>
-      <div class="lang-chips-row">
-        <span class="lc lc-key"><span class="en">English</span><span class="zh">英语</span></span>
-        <span class="lc lc-key"><span class="en">French</span><span class="zh">法语</span></span>
-        <span class="lc lc-key"><span class="en">German</span><span class="zh">德语</span></span>
-        <span class="lc lc-key"><span class="en">Spanish</span><span class="zh">西班牙语</span></span>
-        <span class="lc lc-key"><span class="en">Portuguese</span><span class="zh">葡萄牙语</span></span>
-        <span class="lc lc-key"><span class="en">Italian</span><span class="zh">意大利语</span></span>
-        <span class="lc lc-key"><span class="en">Russian</span><span class="zh">俄语</span></span>
-        <span class="lc lc-key"><span class="en">Dutch</span><span class="zh">荷兰语</span></span>
-        <span class="lc lc-key"><span class="en">Polish</span><span class="zh">波兰语</span></span>
-        <span class="lc lc-key"><span class="en">Ukrainian</span><span class="zh">乌克兰语</span></span>
-        <span class="lc lc-key"><span class="en">Romanian</span><span class="zh">罗马尼亚语</span></span>
-        <span class="lc lc-key"><span class="en">Czech</span><span class="zh">捷克语</span></span>
-        <span class="lc lc-key"><span class="en">Hungarian</span><span class="zh">匈牙利语</span></span>
-        <span class="lc lc-key"><span class="en">Swedish</span><span class="zh">瑞典语</span></span>
-        <span class="lc lc-key"><span class="en">Bulgarian</span><span class="zh">保加利亚语</span></span>
-        <span class="lc lc-key"><span class="en">Serbian</span><span class="zh">塞尔维亚语</span></span>
-        <span class="lc lc-key"><span class="en">Norwegian</span><span class="zh">挪威语</span></span>
-        <span class="lc lc-key"><span class="en">Finnish</span><span class="zh">芬兰语</span></span>
-        <span class="lc lc-key"><span class="en">Danish</span><span class="zh">丹麦语</span></span>
-        <span class="lc lc-key"><span class="en">Slovak</span><span class="zh">斯洛伐克语</span></span>
-        <span class="lc lc-key"><span class="en">Croatian</span><span class="zh">克罗地亚语</span></span>
-        <span class="lc lc-key"><span class="en">Lithuanian</span><span class="zh">立陶宛语</span></span>
-        <span class="lc lc-key"><span class="en">Slovenian</span><span class="zh">斯洛文尼亚语</span></span>
-        <span class="lc lc-key"><span class="en">Latvian</span><span class="zh">拉脱维亚语</span></span>
-        <span class="lc lc-key"><span class="en">Estonian</span><span class="zh">爱沙尼亚语</span></span>
-        <span class="lc lc-key"><span class="en">Greek</span><span class="zh">希腊语</span></span>
-        <span class="lc lc-key"><span class="en">Belarusian</span><span class="zh">白俄罗斯语</span></span>
-        <span class="lc lc-key"><span class="en">Catalan</span><span class="zh">加泰罗尼亚语</span></span>
-        <span class="lc lc-key"><span class="en">Bosnian</span><span class="zh">波斯尼亚语</span></span>
-        <span class="lc lc-key"><span class="en">Macedonian</span><span class="zh">马其顿语</span></span>
-        <span class="lc lc-key"><span class="en">Galician</span><span class="zh">加利西亚语</span></span>
-        <span class="lc lc-key"><span class="en">Luxembourgish</span><span class="zh">卢森堡语</span></span>
-        <span class="lc lc-key"><span class="en">Maltese</span><span class="zh">马耳他语</span></span>
-        <span class="lc lc-key"><span class="en">Icelandic</span><span class="zh">冰岛语</span></span>
-        <span class="lc lc-key"><span class="en">Irish</span><span class="zh">爱尔兰语</span></span>
-        <span class="lc lc-key"><span class="en">Welsh</span><span class="zh">威尔士语</span></span>
-        <span class="lc lc-key"><span class="en">Asturian</span><span class="zh">阿斯图里亚斯语</span></span>
-        <span class="lc lc-key"><span class="en">Occitan</span><span class="zh">奥克语</span></span>
-      </div>
-    </div>
-
-    <!-- Pacific -->
-    <div class="lang-region-row">
-      <div><div class="lang-region-name en">Pacific</div><div class="lang-region-name zh">太平洋</div></div>
-      <div class="lang-chips-row">
-        <span class="lc lc-key"><span class="en">Māori</span><span class="zh">毛利语</span></span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<hr>
-
-<!-- ════════════════════════════════════
-     CORRIDORS
+     MARKET CORRIDORS
 ════════════════════════════════════ -->
 <section id="corridors">
   <div class="section-inner">
-    <div class="section-eyebrow en">China Trade Corridors</div>
-    <div class="section-eyebrow zh">中国贸易走廊</div>
-    <div class="section-h2 en">Your Two Target Markets</div>
-    <div class="section-h2 zh">两大核心目标市场</div>
-    <p class="section-lead en">VALSEA's China distribution program focuses on two corridors where Chinese enterprise expansion is fastest — and where no competing speech platform can fully serve the language requirements.</p>
-    <p class="section-lead zh">VALSEA 中国分销计划聚焦两条走廊——中国企业扩张最迅速、且无任何竞争性语音平台能够完整满足语言需求之处。</p>
+    <div class="section-eyebrow en">Market Corridors</div>
+    <div class="section-eyebrow zh">市场走廊</div>
+    <div class="section-h2 en">Pick Your Market. We Back You.</div>
+    <div class="section-h2 zh">选择您的市场，我们全力支持</div>
+    <p class="section-lead en">VALSEA operates across the world's fastest-growing trade corridors — regions where no global speech platform can fully serve the language requirements. Choose the corridor that matches your network.</p>
+    <p class="section-lead zh">VALSEA 覆盖全球增长最快的贸易走廊——全球语音平台无法完整服务语言需求的区域。选择与您网络匹配的走廊。</p>
 
+    <!-- Active Corridors -->
     <div class="corridor-grid">
+
+      <!-- India ↔ UAE -->
+      <div class="c-card">
+        <div class="c-header" style="background: linear-gradient(135deg, #0a4435, #0d5c49);">
+          <div class="c-eyebrow en">ACTIVE BEACHHEAD</div>
+          <div class="c-eyebrow zh">活跃前沿阵地</div>
+          <div class="c-title en">India ↔ UAE</div>
+          <div class="c-title zh">印度 ↔ 阿联酋</div>
+          <div class="c-meta en">$178B trade · 73,100 Indian companies in Dubai</div>
+          <div class="c-meta zh">贸易额 1780 亿美元 · 迪拜 73,100 家印度企业</div>
+        </div>
+        <div class="c-body">
+          <div class="c-verticals">
+            <span class="c-vtag en">Logistics</span><span class="c-vtag zh">物流</span>
+            <span class="c-vtag en">BPO</span><span class="c-vtag zh">BPO</span>
+            <span class="c-vtag en">Construction</span><span class="c-vtag zh">建筑</span>
+          </div>
+          <div class="c-score en">GTM Score: <strong>21.5</strong> / 25</div>
+          <div class="c-score zh">GTM 评分：<strong>21.5</strong> / 25</div>
+        </div>
+      </div>
 
       <!-- China ↔ Africa -->
       <div class="c-card">
-        <div class="c-header" style="background: linear-gradient(135deg, #3d2400 0%, #6b3a00 60%, #4a2a00 100%);">
-          <div class="c-eyebrow en">CORRIDOR 01 — PRIORITY ACTIVATION</div>
-          <div class="c-eyebrow zh">走廊 01 — 优先激活</div>
+        <div class="c-header" style="background: linear-gradient(135deg, #3d2400, #6b3a00);">
+          <div class="c-eyebrow en">STRATEGIC MOAT</div>
+          <div class="c-eyebrow zh">战略护城河</div>
           <div class="c-title en">China ↔ Africa</div>
           <div class="c-title zh">中国 ↔ 非洲</div>
-          <div class="c-meta en">$296B trade volume &nbsp;·&nbsp; GTM Score: 23.0 / 25</div>
-          <div class="c-meta zh">贸易额 2960 亿美元 &nbsp;·&nbsp; GTM 评分：23.0 / 25</div>
+          <div class="c-meta en">$296B trade · Mandarin↔Swahili exclusive</div>
+          <div class="c-meta zh">贸易额 2960 亿美元 · 普通话↔斯瓦希里语独有</div>
         </div>
         <div class="c-body">
-          <p class="c-desc en">Chinese-invested BPOs, mining operations, and telecom companies in East and West Africa require multilingual voice infrastructure that handles Mandarin, African-accented English, and Swahili simultaneously — a combination no global provider supports.</p>
-          <p class="c-desc zh">在东非和西非运营的中资 BPO、矿业和电信企业，需要同时处理普通话、非洲口音英语和斯瓦希里语的多语言语音基础设施——这一组合目前全球无任何服务商能够完整支持。</p>
-          <ul class="c-usecases">
-            <li class="en">BPO call center transcription and compliance recording</li>
-            <li class="zh">BPO 呼叫中心转录与合规录音</li>
-            <li class="en">Mining and infrastructure project multilingual meeting intelligence</li>
-            <li class="zh">矿业与基础设施项目多语言会议智能</li>
-            <li class="en">Telecom customer service — Mandarin ↔ Swahili ↔ English</li>
-            <li class="zh">电信客服——普通话 ↔ 斯瓦希里语 ↔ 英语</li>
-            <li class="en">Trade documentation generated from spoken cross-border instructions</li>
-            <li class="zh">由口头跨境指令自动生成的贸易文件</li>
-          </ul>
-          <div class="c-langs">
-            <span class="lang-chip lang-chip-exclusive en">★ Mandarin↔Swahili (Exclusive)</span>
-            <span class="lang-chip lang-chip-exclusive zh">★ 普通话↔斯瓦希里语（独有）</span>
-            <span class="lang-chip en">Mandarin</span><span class="lang-chip zh">普通话</span>
-            <span class="lang-chip en">African English</span><span class="lang-chip zh">非洲英语</span>
-            <span class="lang-chip en">Swahili</span><span class="lang-chip zh">斯瓦希里语</span>
+          <div class="c-verticals">
+            <span class="c-vtag en">BPO</span><span class="c-vtag zh">BPO</span>
+            <span class="c-vtag en">Mining</span><span class="c-vtag zh">矿业</span>
+            <span class="c-vtag en">Construction</span><span class="c-vtag zh">建筑</span>
           </div>
+          <div class="c-score en">GTM Score: <strong>23.0</strong> / 25</div>
+          <div class="c-score zh">GTM 评分：<strong>23.0</strong> / 25</div>
+        </div>
+      </div>
+
+      <!-- India ↔ Africa -->
+      <div class="c-card">
+        <div class="c-header" style="background: linear-gradient(135deg, #3d0a28, #6b1245);">
+          <div class="c-eyebrow en">PARALLEL ACTIVATION</div>
+          <div class="c-eyebrow zh">并行激活</div>
+          <div class="c-title en">India ↔ Africa</div>
+          <div class="c-title zh">印度 ↔ 非洲</div>
+          <div class="c-meta en">$100B+ trade · 900+ Indian factories in Uganda alone</div>
+          <div class="c-meta zh">贸易额超 1000 亿美元 · 仅乌干达即 900+ 家印度工厂</div>
+        </div>
+        <div class="c-body">
+          <div class="c-verticals">
+            <span class="c-vtag en">Manufacturing</span><span class="c-vtag zh">制造业</span>
+            <span class="c-vtag en">Pharma</span><span class="c-vtag zh">制药</span>
+            <span class="c-vtag en">BPO</span><span class="c-vtag zh">BPO</span>
+          </div>
+          <div class="c-score en">GTM Score: <strong>19.0</strong> / 25</div>
+          <div class="c-score zh">GTM 评分：<strong>19.0</strong> / 25</div>
+        </div>
+      </div>
+
+      <!-- India ↔ China -->
+      <div class="c-card">
+        <div class="c-header" style="background: linear-gradient(135deg, #2e1065, #4c1d95);">
+          <div class="c-eyebrow en">PARTNER-LED</div>
+          <div class="c-eyebrow zh">合作伙伴主导</div>
+          <div class="c-title en">India ↔ China</div>
+          <div class="c-title zh">印度 ↔ 中国</div>
+          <div class="c-meta en">$136B trade · Zero direct sales cost</div>
+          <div class="c-meta zh">贸易额 1360 亿美元 · 零直销成本</div>
+        </div>
+        <div class="c-body">
+          <div class="c-verticals">
+            <span class="c-vtag en">Manufacturing</span><span class="c-vtag zh">制造业</span>
+            <span class="c-vtag en">Pharma</span><span class="c-vtag zh">制药</span>
+            <span class="c-vtag en">Tech</span><span class="c-vtag zh">科技</span>
+          </div>
+          <div class="c-score en">Partner-distributed</div>
+          <div class="c-score zh">合作伙伴分销</div>
         </div>
       </div>
 
       <!-- China ↔ SEA -->
-      <div class="c-card">
-        <div class="c-header" style="background: linear-gradient(135deg, #0c2d5e 0%, #1a4a8a 60%, #0e3060 100%);">
-          <div class="c-eyebrow en">CORRIDOR 02 — GROWTH ACTIVATION</div>
-          <div class="c-eyebrow zh">走廊 02 — 增长激活</div>
+      <div class="c-card" style="grid-column: 1 / -1;">
+        <div class="c-header" style="background: linear-gradient(135deg, #0c2d5e, #1a4a8a);">
+          <div class="c-eyebrow en">GROWTH CORRIDOR</div>
+          <div class="c-eyebrow zh">增长走廊</div>
           <div class="c-title en">China ↔ Southeast Asia</div>
           <div class="c-title zh">中国 ↔ 东南亚</div>
-          <div class="c-meta en">$200B+ trade volume &nbsp;·&nbsp; GTM Score: 17.5 / 25</div>
-          <div class="c-meta zh">贸易额 2000 亿美元以上 &nbsp;·&nbsp; GTM 评分：17.5 / 25</div>
+          <div class="c-meta en">$200B+ trade · Chinese "Little Giant" SMEs relocating to Vietnam, Malaysia, Indonesia</div>
+          <div class="c-meta zh">贸易额超 2000 亿美元 · 中国"小巨人"企业迁往越南、马来西亚、印尼</div>
         </div>
         <div class="c-body">
-          <p class="c-desc en">Chinese manufacturing firms expanding into Vietnam, Indonesia, Thailand, and Malaysia face daily communication gaps between Chinese management and local staff. VALSEA bridges the linguistic gap across factory floors, supply chain meetings, and trade documentation workflows.</p>
-          <p class="c-desc zh">中国制造企业向越南、印度尼西亚、泰国和马来西亚扩张时，面临中方管理层与本地员工之间的日常沟通障碍。VALSEA 在工厂运营、供应链会议及贸易文档工作流中弥合这一语言鸿沟。</p>
-          <ul class="c-usecases">
-            <li class="en">Factory management communications — Mandarin + Bahasa / Thai / Vietnamese</li>
-            <li class="zh">工厂管理沟通——普通话 + 印尼语 / 泰语 / 越南语</li>
-            <li class="en">Cross-border supply chain and logistics meeting notes</li>
-            <li class="zh">跨境供应链与物流会议纪要</li>
-            <li class="en">Trade documentation generated from mixed-language operations calls</li>
-            <li class="zh">由混合语言运营通话自动生成贸易文件</li>
-            <li class="en">Chinese-invested logistics hub and port voice workflows</li>
-            <li class="zh">中资物流枢纽与港口语音工作流</li>
-          </ul>
-          <div class="c-langs">
-            <span class="lang-chip en">Mandarin</span><span class="lang-chip zh">普通话</span>
-            <span class="lang-chip en">Bahasa Indonesia</span><span class="lang-chip zh">印度尼西亚语</span>
-            <span class="lang-chip en">Vietnamese</span><span class="lang-chip zh">越南语</span>
-            <span class="lang-chip en">Thai</span><span class="lang-chip zh">泰语</span>
-            <span class="lang-chip en">Taglish</span><span class="lang-chip zh">菲律宾式英语</span>
-            <span class="lang-chip en">Singlish</span><span class="lang-chip zh">新加坡式英语</span>
+          <div class="c-verticals">
+            <span class="c-vtag en">Manufacturing</span><span class="c-vtag zh">制造业</span>
+            <span class="c-vtag en">Logistics</span><span class="c-vtag zh">物流</span>
+            <span class="c-vtag en">Trade Documentation</span><span class="c-vtag zh">贸易文档</span>
           </div>
+          <div class="c-score en">GTM Score: <strong>17.5</strong> / 25</div>
+          <div class="c-score zh">GTM 评分：<strong>17.5</strong> / 25</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Expansion Corridors -->
+    <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:14px;">
+      <span class="en">Expansion Corridors · Coming Next</span>
+      <span class="zh">拓展走廊 · 即将开放</span>
+    </p>
+
+    <div class="expansion-grid">
+      <div class="exp-card">
+        <div class="exp-label">CPEC</div>
+        <div class="exp-name en">China ↔ Pakistan</div>
+        <div class="exp-name zh">中国 ↔ 巴基斯坦</div>
+        <div class="exp-desc en">$62B · Infrastructure & Energy</div>
+        <div class="exp-desc zh">620 亿美元 · 基建与能源</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-label">OFW</div>
+        <div class="exp-name en">Philippines ↔ Gulf</div>
+        <div class="exp-name zh">菲律宾 ↔ 海湾</div>
+        <div class="exp-desc en">2.2M workers · $10B remittances</div>
+        <div class="exp-desc zh">220 万劳工 · 100 亿美元汇款</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-label">RMG</div>
+        <div class="exp-name en">Bangladesh ↔ China</div>
+        <div class="exp-name zh">孟加拉 ↔ 中国</div>
+        <div class="exp-desc en">$6B+ fabric supply chain</div>
+        <div class="exp-desc zh">60 亿+ 面料供应链</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-label">BRI</div>
+        <div class="exp-name en">Central Asia ↔ China</div>
+        <div class="exp-name zh">中亚 ↔ 中国</div>
+        <div class="exp-desc en">$50B+ · New Silk Road</div>
+        <div class="exp-desc zh">500 亿+ · 新丝绸之路</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-label">MEKONG</div>
+        <div class="exp-name en">Myanmar/Laos ↔ China</div>
+        <div class="exp-name zh">缅甸/老挝 ↔ 中国</div>
+        <div class="exp-desc en">$30B+ · Rail & Agriculture</div>
+        <div class="exp-desc zh">300 亿+ · 铁路与农业</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ════════════════════════════════════
+     VERTICALS
+════════════════════════════════════ -->
+<section id="verticals" class="bg-card">
+  <div class="section-inner">
+    <div class="section-eyebrow en">Verticals</div>
+    <div class="section-eyebrow zh">行业垂直</div>
+    <div class="section-h2 en">Pick Your Focus. Own Your Vertical.</div>
+    <div class="section-h2 zh">选择您的专注领域，深耕行业</div>
+    <p class="section-lead en">Partners sell into the verticals they know best. VALSEA provides vertical-specific sales materials, terminology packs, and demo environments for each.</p>
+    <p class="section-lead zh">合作伙伴在最熟悉的行业中销售。VALSEA 为每个行业提供专属销售资料、术语包和演示环境。</p>
+
+    <div class="vert-grid">
+
+      <div class="vert-card">
+        <div class="vert-icon" style="background:var(--pink-bg);">📞</div>
+        <h3 class="en">BPO / Contact Centers</h3>
+        <h3 class="zh">BPO / 呼叫中心</h3>
+        <p class="en">QA scoring, compliance archiving, and code-switched call transcription for 500–5,000 agent operations competing for enterprise RFPs.</p>
+        <p class="zh">为 500–5,000 座席的运营商提供 QA 评分、合规归档及语码转换通话转录，助力其赢得企业 RFP。</p>
+        <div class="vert-corridors">
+          <span>India↔UAE</span>
+          <span>China↔Africa</span>
+          <span>India↔Africa</span>
+        </div>
+      </div>
+
+      <div class="vert-card">
+        <div class="vert-icon" style="background:var(--green-bg);">🚢</div>
+        <h3 class="en">Logistics / 3PL</h3>
+        <h3 class="zh">物流 / 第三方物流</h3>
+        <p class="en">Voice-to-order capture, freight coordination transcription, and multilingual shipment documentation for cross-border forwarders.</p>
+        <p class="zh">为跨境货运代理提供语音转订单、货运协调转录及多语言运输文档。</p>
+        <div class="vert-corridors">
+          <span>India↔UAE</span>
+          <span>China↔SEA</span>
+        </div>
+      </div>
+
+      <div class="vert-card">
+        <div class="vert-icon" style="background:var(--amber-bg);">🏗️</div>
+        <h3 class="en">Construction / EPC</h3>
+        <h3 class="zh">建筑 / 工程总承包</h3>
+        <p class="en">Safety SOPs, multilingual site coordination, and project meeting intelligence for cross-border construction with mixed-language crews.</p>
+        <p class="zh">为跨国混合语言施工团队提供安全 SOP、多语言现场协调及项目会议智能。</p>
+        <div class="vert-corridors">
+          <span>China↔Africa</span>
+          <span>India↔UAE</span>
+          <span>CPEC</span>
+        </div>
+      </div>
+
+      <div class="vert-card">
+        <div class="vert-icon" style="background:var(--blue-bg);">🏭</div>
+        <h3 class="en">Manufacturing</h3>
+        <h3 class="zh">制造业</h3>
+        <p class="en">Factory floor voice notes, QC documentation, and management↔workforce communication for Chinese and Indian manufacturers expanding abroad.</p>
+        <p class="zh">为中国和印度制造商海外扩张提供工厂语音记录、QC 文档及管理层与工人的沟通工具。</p>
+        <div class="vert-corridors">
+          <span>China↔SEA</span>
+          <span>India↔Africa</span>
+          <span>India↔China</span>
+        </div>
+      </div>
+
+      <div class="vert-card">
+        <div class="vert-icon" style="background:var(--purple-bg);">💊</div>
+        <h3 class="en">Pharma Compliance</h3>
+        <h3 class="zh">制药合规</h3>
+        <p class="en">Bilingual batch records, regulatory filings, and voice-to-document compliance workflows for pharmaceutical export corridors.</p>
+        <p class="zh">为制药出口走廊提供双语批次记录、监管文件及语音转文档合规工作流。</p>
+        <div class="vert-corridors">
+          <span>India↔China</span>
+          <span>India↔Africa</span>
+        </div>
+      </div>
+
+      <div class="vert-card">
+        <div class="vert-icon" style="background:var(--rose-bg);">🍽️</div>
+        <h3 class="en">F&B / Hospitality</h3>
+        <h3 class="zh">餐饮 / 酒店</h3>
+        <p class="en">Order capture, multilingual customer service transcription, and voice-powered operations for chains with accent-heavy customer interactions.</p>
+        <p class="zh">为口音丰富客户互动的连锁品牌提供订单采集、多语言客服转录及语音驱动运营。</p>
+        <div class="vert-corridors">
+          <span>SEA</span>
+          <span>India↔UAE</span>
         </div>
       </div>
 
@@ -1270,62 +856,105 @@ print(data[<span class="cs">"meeting_notes"</span>][<span class="cs">"action_ite
 <hr>
 
 <!-- ════════════════════════════════════
-     WHY PARTNER
+     PARTNER PERKS & PROMO CODES
 ════════════════════════════════════ -->
-<section id="why-partner" class="bg-card">
+<section id="perks">
   <div class="section-inner">
-    <div class="section-eyebrow en">Why Partner with VALSEA</div>
-    <div class="section-eyebrow zh">为何选择与 VALSEA 合作</div>
-    <div class="section-h2 en">Structural Advantages for China Distribution</div>
-    <div class="section-h2 zh">中国分销的结构性优势</div>
-    <p class="section-lead en">VALSEA is not one of ten options in a crowded market. On the corridors that matter to China's enterprise expansion, we are the only viable option for complete language coverage.</p>
-    <p class="section-lead zh">VALSEA 不是拥挤赛道中的众多选项之一。在中国企业海外扩张所关注的走廊上，我们是唯一能提供完整语言覆盖的可行选择。</p>
+    <div class="section-eyebrow en">Partner Perks</div>
+    <div class="section-eyebrow zh">合作伙伴权益</div>
+    <div class="section-h2 en">Everything You Need to Distribute</div>
+    <div class="section-h2 zh">分销所需的一切支持</div>
+    <p class="section-lead en">From promo codes to co-sell decks — we equip you to close deals in your market without building anything yourself.</p>
+    <p class="section-lead zh">从促销代码到联合销售材料——我们为您提供在本地市场完成交易所需的全套装备，无需自行开发。</p>
 
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-num">01</div>
-        <h3 class="en">Zero Competition on Key Routes</h3>
-        <h3 class="zh">核心路线零竞争</h3>
-        <p class="en">The Mandarin ↔ Swahili pipeline does not exist at Google, Azure, or AWS. For Chinese enterprises operating in East Africa, VALSEA is not a vendor selection — it is the only selection. This structural monopoly compounds as Chinese Africa trade expands.</p>
-        <p class="zh">普通话↔斯瓦希里语管道在 Google、Azure 和 AWS 均不存在。对于在东非运营的中国企业，VALSEA 不是供应商选项，而是唯一选择。随着中非贸易持续扩大，这一结构性垄断优势将持续积累。</p>
+    <div class="perks-grid">
+
+      <div class="perk-card">
+        <div class="perk-icon" style="background:var(--pink-bg);">🎟️</div>
+        <div>
+          <h3 class="en">Promo Codes for Clients</h3>
+          <h3 class="zh">客户促销代码</h3>
+          <p class="en">Get a unique partner promo code. Every client who signs up with your code earns you recurring revenue share and gives them onboarding credits.</p>
+          <p class="zh">获取唯一的合作伙伴促销代码。每位使用您代码注册的客户为您带来持续营收分成，客户也可获得入驻积分。</p>
+        </div>
       </div>
-      <div class="why-card">
-        <div class="why-num">02</div>
-        <h3 class="en">China Data Residency — No Compliance Risk</h3>
-        <h3 class="zh">数据境内存储——零合规风险</h3>
-        <p class="en">VALSEA supports China data residency deployment — all audio data stays within Chinese borders. No cross-border data transfer, no PIPL exposure for your enterprise customers. The compliance story sells itself to Chinese legal and IT teams.</p>
-        <p class="zh">VALSEA 支持数据中国境内存储部署——所有音频数据留存在中国境内，无跨境数据传输，客户无需承担《个人信息保护法》合规风险。这一合规优势对中国企业法务与 IT 团队极具说服力。</p>
+
+      <div class="perk-card">
+        <div class="perk-icon" style="background:var(--green-bg);">💰</div>
+        <div>
+          <h3 class="en">Reseller Margins</h3>
+          <h3 class="zh">转售利润</h3>
+          <p class="en">Competitive API reseller margins on all client usage. Higher tiers earn higher margins. Revenue grows as your clients scale their usage.</p>
+          <p class="zh">所有客户用量享有竞争力的 API 转售利润。更高等级享有更高利润率。客户用量增长，您的收益同步增长。</p>
+        </div>
       </div>
-      <div class="why-card">
-        <div class="why-num">03</div>
-        <h3 class="en">Expanding Demand, No Ceiling</h3>
-        <h3 class="zh">需求持续扩张，上限无界</h3>
-        <p class="en">China's Africa trade corridor ($296B) and SEA trade corridor ($200B+) are both growing. Chinese BPOs, logistics operators, and manufacturing firms are actively building multilingual operations infrastructure. Your addressable market grows with VALSEA's moat.</p>
-        <p class="zh">中国对非贸易走廊（2960 亿美元）和东南亚贸易走廊（2000 亿美元以上）均在持续增长。中国 BPO、物流及制造企业正积极搭建多语言运营基础设施。您的可寻址市场与 VALSEA 的护城河同步扩大。</p>
+
+      <div class="perk-card">
+        <div class="perk-icon" style="background:var(--blue-bg);">📊</div>
+        <div>
+          <h3 class="en">Co-Marketing Materials</h3>
+          <h3 class="zh">联合营销资料</h3>
+          <p class="en">Multilingual sales decks, vertical-specific one-pagers, demo videos, and co-branded collateral in English, Mandarin, Hindi, and Arabic.</p>
+          <p class="zh">多语言销售 PPT、行业单页、演示视频及联合品牌资料，提供英语、普通话、印地语和阿拉伯语版本。</p>
+        </div>
       </div>
-      <div class="why-card">
-        <div class="why-num">04</div>
-        <h3 class="en">Revenue Share + Full Co-Sell Support</h3>
-        <h3 class="zh">营收分成 + 全方位联合销售支持</h3>
-        <p class="en">Competitive API reseller margins with joint go-to-market support for China enterprise accounts. VALSEA provides Mandarin-language technical documentation, Chinese-facing sales materials, dedicated integration support, and quarterly business reviews.</p>
-        <p class="zh">具有竞争力的 API 转售利润，并为中国企业账户提供联合市场推广支持。VALSEA 提供中文技术文档、面向中国市场的销售资料、专属集成支持及季度业务回顾。</p>
+
+      <div class="perk-card">
+        <div class="perk-icon" style="background:var(--purple-bg);">🔧</div>
+        <div>
+          <h3 class="en">Sandbox & Demo Access</h3>
+          <h3 class="zh">沙盒与演示访问</h3>
+          <p class="en">Full API sandbox access to demo VALSEA to prospects. Pre-loaded with corridor-specific audio samples so you can show accuracy from day one.</p>
+          <p class="zh">完整 API 沙盒访问权限，用于向潜在客户演示。预装走廊特定音频样本，让您从第一天起展示精准度。</p>
+        </div>
       </div>
+
+      <div class="perk-card">
+        <div class="perk-icon" style="background:var(--amber-bg);">🤝</div>
+        <div>
+          <h3 class="en">Dedicated Partner Support</h3>
+          <h3 class="zh">专属合作伙伴支持</h3>
+          <p class="en">Partner Success Manager for Strategic and OEM tiers. Technical integration support, quarterly business reviews, and joint pipeline planning.</p>
+          <p class="zh">战略及 OEM 等级享有专属合作伙伴成功经理。技术集成支持、季度业务回顾及联合商机规划。</p>
+        </div>
+      </div>
+
+      <div class="perk-card">
+        <div class="perk-icon" style="background:var(--rose-bg);">🌐</div>
+        <div>
+          <h3 class="en">Regional Exclusivity</h3>
+          <h3 class="zh">区域独家权益</h3>
+          <p class="en">Top-performing partners can earn corridor or vertical exclusivity in their region. First-mover advantage compounds as the market grows.</p>
+          <p class="zh">表现优异的合作伙伴可在其区域获得走廊或行业独家权益。先发优势随市场增长而持续积累。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Promo Code Highlight -->
+    <div class="promo-highlight">
+      <h3 class="en">Your Partner Promo Code</h3>
+      <h3 class="zh">您的合作伙伴促销代码</h3>
+      <p class="en">Every approved partner receives a unique promo code. Share it with clients to give them onboarding credits — and earn recurring revenue share on every deal closed.</p>
+      <p class="zh">每位获批的合作伙伴都会收到唯一促销代码。分享给客户可为其提供入驻积分——同时您可在每笔成交中获得持续营收分成。</p>
+      <div class="promo-code-example">PARTNER-XXXX-2026</div>
     </div>
   </div>
 </section>
 
+<hr>
 
 <!-- ════════════════════════════════════
-     PARTNER PROGRAM
+     PARTNER TIERS
 ════════════════════════════════════ -->
-<section id="partner-program">
+<section id="tiers" class="bg-card">
   <div class="section-inner">
-    <div class="section-eyebrow en">Partner Program</div>
-    <div class="section-eyebrow zh">合作伙伴计划</div>
+    <div class="section-eyebrow en">Partner Tiers</div>
+    <div class="section-eyebrow zh">合作伙伴等级</div>
     <div class="section-h2 en">Three Tiers. One Shared Goal.</div>
     <div class="section-h2 zh">三级架构，共同目标</div>
-    <p class="section-lead en">Whether you are a cloud reseller, a system integrator, or a platform looking to embed speech intelligence, we have a structure for you.</p>
-    <p class="section-lead zh">无论您是云服务转售商、系统集成商，还是希望嵌入语音智能的平台方，我们均有适配的合作架构。</p>
+    <p class="section-lead en">Whether you are a cloud reseller, a system integrator, or a platform looking to embed speech intelligence — we have a structure for you.</p>
+    <p class="section-lead zh">无论您是云服务转售商、系统集成商，还是希望嵌入语音智能的平台方——我们均有适配的合作架构。</p>
 
     <div class="tier-grid">
 
@@ -1337,10 +966,12 @@ print(data[<span class="cs">"meeting_notes"</span>][<span class="cs">"action_ite
         <div class="tier-name zh">授权转售商</div>
         <ul class="tier-features">
           <li><span class="check-green">✓</span><span class="en">API resale rights</span><span class="zh">API 转售权限</span></li>
+          <li><span class="check-green">✓</span><span class="en">Partner promo code</span><span class="zh">合作伙伴促销代码</span></li>
           <li><span class="check-green">✓</span><span class="en">Standard reseller margin</span><span class="zh">标准转售利润</span></li>
-          <li><span class="check-green">✓</span><span class="en">Mandarin-language sales materials</span><span class="zh">中文销售资料</span></li>
-          <li><span class="check-green">✓</span><span class="en">Partner support portal access</span><span class="zh">合作伙伴支持门户访问</span></li>
-          <li><span class="check-green">✓</span><span class="en">Standard SLA (99.5% uptime)</span><span class="zh">标准 SLA（99.5% 可用性）</span></li>
+          <li><span class="check-green">✓</span><span class="en">Multilingual sales materials</span><span class="zh">多语言销售资料</span></li>
+          <li><span class="check-green">✓</span><span class="en">Sandbox & demo access</span><span class="zh">沙盒与演示访问</span></li>
+          <li><span class="check-green">✓</span><span class="en">Partner support portal</span><span class="zh">合作伙伴支持门户</span></li>
+          <li><span class="check-green">✓</span><span class="en">Standard SLA (99.5%)</span><span class="zh">标准 SLA（99.5%）</span></li>
         </ul>
         <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">
           <span class="en">Apply</span><span class="zh">立即申请</span>
@@ -1361,8 +992,9 @@ print(data[<span class="cs">"meeting_notes"</span>][<span class="cs">"action_ite
           <li><span class="check-green">✓</span><span class="en">Joint go-to-market support</span><span class="zh">联合市场推广支持</span></li>
           <li><span class="check-green">✓</span><span class="en">Dedicated Partner Success Manager</span><span class="zh">专属合作伙伴成功经理</span></li>
           <li><span class="check-green">✓</span><span class="en">Custom integration support</span><span class="zh">定制集成支持</span></li>
-          <li><span class="check-green">✓</span><span class="en">Priority SLA (99.9% uptime)</span><span class="zh">优先 SLA（99.9% 可用性）</span></li>
+          <li><span class="check-green">✓</span><span class="en">Priority SLA (99.9%)</span><span class="zh">优先 SLA（99.9%）</span></li>
           <li><span class="check-green">✓</span><span class="en">Quarterly business reviews</span><span class="zh">季度业务回顾</span></li>
+          <li><span class="check-green">✓</span><span class="en">Regional exclusivity available</span><span class="zh">区域独家权益可选</span></li>
         </ul>
         <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">
           <span class="en">Apply</span><span class="zh">立即申请</span>
@@ -1382,6 +1014,7 @@ print(data[<span class="cs">"meeting_notes"</span>][<span class="cs">"action_ite
           <li><span class="check-green">✓</span><span class="en">Private model fine-tuning</span><span class="zh">私有模型微调</span></li>
           <li><span class="check-green">✓</span><span class="en">On-premise deployment option</span><span class="zh">本地化部署选项</span></li>
           <li><span class="check-green">✓</span><span class="en">Co-branding rights</span><span class="zh">联合品牌权益</span></li>
+          <li><span class="check-green">✓</span><span class="en">Corridor exclusivity</span><span class="zh">走廊独家权益</span></li>
         </ul>
         <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">
           <span class="en">Enquire</span><span class="zh">咨询了解</span>
@@ -1395,60 +1028,54 @@ print(data[<span class="cs">"meeting_notes"</span>][<span class="cs">"action_ite
 <hr>
 
 <!-- ════════════════════════════════════
-     QUICKSTART
+     API PRODUCT
 ════════════════════════════════════ -->
-<section id="quickstart" class="bg-card">
+<section id="api">
   <div class="section-inner">
-    <div class="section-eyebrow en">Developer Quickstart</div>
-    <div class="section-eyebrow zh">开发者快速入门</div>
-    <div class="section-h2 en">Start Building in Minutes</div>
-    <div class="section-h2 zh">数分钟即可开始构建</div>
-    <p class="section-lead en">VALSEA's REST API is designed for rapid integration. Most partners complete a working prototype within a single developer-day. Full technical documentation is available in English and Mandarin.</p>
-    <p class="section-lead zh">VALSEA REST API 专为快速集成设计。大多数合作伙伴可在一个工作日内完成原型开发。完整技术文档提供中英双语版本。</p>
+    <div class="section-eyebrow en">What You're Distributing</div>
+    <div class="section-eyebrow zh">您分销的产品</div>
+    <div class="section-h2 en">VALSEA Speech API</div>
+    <div class="section-h2 zh">VALSEA 语音 API</div>
+    <p class="section-lead en">A single REST API for transcription, semantic extraction, and structured output — deployable in any corridor with data residency compliance.</p>
+    <p class="section-lead zh">一个统一的 REST API，覆盖转录、语义提取及结构化输出——可在任何走廊部署，满足数据本地化合规要求。</p>
 
-    <div class="qs-grid">
-      <div class="qs-steps">
+    <div class="api-grid">
+      <div class="api-features">
 
-        <div class="qs-step">
-          <div class="qs-num">1</div>
+        <div class="api-feat">
+          <div class="api-feat-icon" style="background:var(--pink-bg);">🎯</div>
           <div>
-            <h4 class="en">Request API Credentials</h4>
-            <h4 class="zh">申请 API 凭证</h4>
-            <p class="en">Contact partner@valsea.ai to receive your API key and sandbox access. China-region deployments support full data residency compliance. Full API docs at <a href="https://valsea.ai/docs" style="color:var(--pink);">valsea.ai/docs</a>.</p>
-            <p class="zh">联系 partner@valsea.ai 获取 API 密钥及沙盒访问权限。中国区域部署支持完整数据本地化合规。完整 API 文档：<a href="https://valsea.ai/docs" style="color:var(--pink);">valsea.ai/docs</a>。</p>
+            <h4>POST /v1/transcribe</h4>
+            <p class="en">Real-time and batch speech-to-text. Accent profile selection. &lt;500ms latency.</p>
+            <p class="zh">实时及批量语音转文字。口音配置选择。延迟低于 500ms。</p>
           </div>
         </div>
 
-        <div class="qs-step">
-          <div class="qs-num">2</div>
+        <div class="api-feat">
+          <div class="api-feat-icon" style="background:var(--green-bg);">💡</div>
           <div>
-            <h4 class="en">Test in Sandbox</h4>
-            <h4 class="zh">沙盒环境测试</h4>
-            <p class="en">Upload sample audio files to the sandbox endpoint. Test Mandarin, Swahili, Bahasa, or mixed-language audio against your target corridor configuration. Results return in &lt;3 seconds.</p>
-            <p class="zh">将示例音频上传至沙盒端点，针对目标走廊配置测试普通话、斯瓦希里语、印尼语或混合语言音频。结果在 3 秒内返回。</p>
+            <h4>POST /v1/understand</h4>
+            <p class="en">Semantic extraction: topics, action items, entities, sentiment. Handles mixed-language natively.</p>
+            <p class="zh">语义提取：主题、行动项、实体、情感分析。原生支持混合语言。</p>
           </div>
         </div>
 
-        <div class="qs-step">
-          <div class="qs-num">3</div>
+        <div class="api-feat">
+          <div class="api-feat-icon" style="background:var(--blue-bg);">📄</div>
           <div>
-            <h4 class="en">Integrate into Your Platform</h4>
-            <h4 class="zh">集成至您的平台</h4>
-            <p class="en">Embed VALSEA's API into your existing platform or resell as a standalone product to enterprise customers. Python, Node.js, and Go SDKs are available. Webhook support for async workflows.</p>
-            <p class="zh">将 VALSEA API 嵌入现有平台，或作为独立产品转售给企业客户。提供 Python、Node.js 和 Go SDK，支持异步工作流的 Webhook 集成。</p>
+            <h4>POST /v1/output</h4>
+            <p class="en">Formatted deliverables: meeting notes, compliance reports, .srt subtitles, custom templates.</p>
+            <p class="zh">格式化交付物：会议纪要、合规报告、.srt 字幕、自定义模板。</p>
           </div>
         </div>
 
-        <div class="qs-step">
-          <div class="qs-num">4</div>
-          <div>
-            <h4 class="en">Go to Market Together</h4>
-            <h4 class="zh">携手共同出击市场</h4>
-            <p class="en">Strategic and OEM partners receive joint pipeline development, enterprise introductions in target corridors, Mandarin co-sell decks, and a dedicated partner success manager from day one.</p>
-            <p class="zh">战略合作伙伴和 OEM 合作伙伴从第一天起即享有联合商机开发、目标走廊企业资源引荐、中文联合销售材料，以及专属合作伙伴成功经理支持。</p>
-          </div>
+        <div class="api-tags">
+          <span class="atag atag-green">✓ REST API</span>
+          <span class="atag atag-green">✓ Webhooks</span>
+          <span class="atag atag-blue">✓ Data Residency</span>
+          <span class="atag atag-pink">✓ 99.9% SLA</span>
+          <span class="atag atag-pink">✓ Python · Node · Go</span>
         </div>
-
       </div>
 
       <div class="code-wrap">
@@ -1458,51 +1085,270 @@ print(data[<span class="cs">"meeting_notes"</span>][<span class="cs">"action_ite
             <div class="code-dot" style="background:#ffbd2e;"></div>
             <div class="code-dot" style="background:#28c840;"></div>
           </div>
-          <div class="code-fname">quickstart.sh</div>
+          <div class="code-fname">partner_demo.py</div>
         </div>
-        <div class="code-body"><span class="cm"># Step 1: Transcribe (Mandarin source audio)</span>
-curl -X POST https://api.valsea.ai/v1/transcribe \
-  -H <span class="cs">"Authorization: Bearer $API_KEY"</span> \
-  -H <span class="cs">"Content-Type: application/json"</span> \
-  -d <span class="cs">'{
-    "audio_url": "https://your-audio.com/meeting.mp3",
-    "source_language": "zh-cmn",
-    "output_formats": ["transcript", "srt"]
-  }'</span>
+        <div class="code-body"><span class="cm"># VALSEA Speech API — Partner Integration</span>
 
-<span class="cm"># Step 2: Extract meaning</span>
-curl -X POST https://api.valsea.ai/v1/understand \
-  -H <span class="cs">"Authorization: Bearer $API_KEY"</span> \
-  -H <span class="cs">"Content-Type: application/json"</span> \
-  -d <span class="cs">'{
-    "transcript_id": "txn_abc123",
-    "extract": ["topics", "action_items", "entities"]
-  }'</span>
+<span class="ck">import</span> requests
 
-<span class="cm"># Response structure:</span>
-<span class="cm"># {</span>
-<span class="cm">#   "transcript": { "zh-cmn": "...", "en": "..." },</span>
-<span class="cm">#   "topics": ["logistics", "contract terms"],</span>
-<span class="cm">#   "action_items": [...],</span>
-<span class="cm">#   "srt_url": "https://cdn.valsea.ai/..."</span>
-<span class="cm"># }</span></div>
+response = requests.post(
+  <span class="cs">"https://api.valsea.ai/v1/transcribe"</span>,
+  headers={
+    <span class="cp">"Authorization"</span>: <span class="cs">"Bearer YOUR_API_KEY"</span>
+  },
+  json={
+    <span class="cp">"audio_url"</span>: <span class="cs">"https://..."</span>,
+    <span class="cp">"source_language"</span>: <span class="cs">"hi"</span>,
+    <span class="cp">"target_languages"</span>: [<span class="cs">"ar"</span>, <span class="cs">"en"</span>],
+    <span class="cp">"output_formats"</span>: [
+      <span class="cs">"transcript"</span>,
+      <span class="cs">"meeting_notes"</span>
+    ],
+    <span class="cp">"corridor"</span>: <span class="cs">"india-uae"</span>
+  }
+)
+
+data = response.json()
+print(data[<span class="cs">"transcript"</span>][<span class="cs">"ar"</span>])
+print(data[<span class="cs">"meeting_notes"</span>])</div>
       </div>
     </div>
   </div>
 </section>
 
+<hr>
+
+<!-- ════════════════════════════════════
+     LANGUAGE COVERAGE
+════════════════════════════════════ -->
+<section id="languages" class="bg-card">
+  <div class="section-inner">
+    <div class="section-eyebrow en">Language Coverage</div>
+    <div class="section-eyebrow zh">语言覆盖</div>
+    <div class="section-h2 en">140+ Languages & Dialects</div>
+    <div class="section-h2 zh">140+ 种语言与方言</div>
+    <p class="section-lead en">From Mandarin dialects to African languages — VALSEA covers the trade corridors that global platforms ignore.</p>
+    <p class="section-lead zh">从普通话方言到非洲语言——VALSEA 覆盖全球平台忽略的贸易走廊语言。</p>
+
+    <div class="lang-coverage-wrap">
+
+      <!-- East Asia -->
+      <div class="lang-region-row">
+        <div class="lang-region-label">East Asia</div>
+        <div class="lang-pills">
+          <span class="lang-pill-tag highlight">Mandarin Chinese</span>
+          <span class="lang-pill-tag highlight">Cantonese</span>
+          <span class="lang-pill-tag">Japanese</span>
+          <span class="lang-pill-tag">Korean</span>
+          <span class="lang-pill-tag">Mongolian</span>
+          <span class="lang-pill-tag">Cantonese (HK accent)</span>
+          <span class="lang-pill-tag">Cantonese (Guangdong accent)</span>
+          <span class="lang-pill-tag">Wu</span>
+          <span class="lang-pill-tag">Minnan</span>
+          <span class="lang-pill-tag">Sichuan dialect</span>
+          <span class="lang-pill-tag">Shanghainese (Zhejiang)</span>
+          <span class="lang-pill-tag">Cantonese (Fujian)</span>
+          <span class="lang-pill-tag">Dongbei dialect</span>
+          <span class="lang-pill-tag">Shandong dialect</span>
+          <span class="lang-pill-tag">Henan dialect</span>
+          <span class="lang-pill-tag">Hubei dialect</span>
+          <span class="lang-pill-tag">Hunan dialect</span>
+          <span class="lang-pill-tag">Jiangxi dialect</span>
+          <span class="lang-pill-tag">Yunnan dialect</span>
+          <span class="lang-pill-tag">Guizhou dialect</span>
+          <span class="lang-pill-tag">Gansu dialect</span>
+          <span class="lang-pill-tag">Shaanxi dialect</span>
+          <span class="lang-pill-tag">Shanxi dialect</span>
+          <span class="lang-pill-tag">Hebei dialect</span>
+          <span class="lang-pill-tag">Tianjin dialect</span>
+          <span class="lang-pill-tag">Ningxia dialect</span>
+          <span class="lang-pill-tag">Anhui dialect</span>
+        </div>
+      </div>
+
+      <!-- Southeast Asia -->
+      <div class="lang-region-row">
+        <div class="lang-region-label">Southeast Asia</div>
+        <div class="lang-pills">
+          <span class="lang-pill-tag highlight">Indonesian</span>
+          <span class="lang-pill-tag highlight">Malay</span>
+          <span class="lang-pill-tag highlight">Vietnamese</span>
+          <span class="lang-pill-tag highlight">Thai</span>
+          <span class="lang-pill-tag highlight">Filipino</span>
+          <span class="lang-pill-tag">Javanese</span>
+          <span class="lang-pill-tag">Cebuano</span>
+          <span class="lang-pill-tag">Burmese</span>
+          <span class="lang-pill-tag">Khmer</span>
+          <span class="lang-pill-tag">Lao</span>
+          <span class="lang-pill-tag">Singlish</span>
+          <span class="lang-pill-tag">English (PH)</span>
+        </div>
+      </div>
+
+      <!-- South Asia -->
+      <div class="lang-region-row">
+        <div class="lang-region-label">South Asia</div>
+        <div class="lang-pills">
+          <span class="lang-pill-tag highlight">Hindi</span>
+          <span class="lang-pill-tag highlight">Bengali</span>
+          <span class="lang-pill-tag highlight">Tamil</span>
+          <span class="lang-pill-tag">Telugu</span>
+          <span class="lang-pill-tag">Kannada</span>
+          <span class="lang-pill-tag">Malayalam</span>
+          <span class="lang-pill-tag">Marathi</span>
+          <span class="lang-pill-tag">Gujarati</span>
+          <span class="lang-pill-tag">Punjabi</span>
+          <span class="lang-pill-tag">Urdu</span>
+          <span class="lang-pill-tag">Nepali</span>
+          <span class="lang-pill-tag">Sindhi</span>
+          <span class="lang-pill-tag">Assamese</span>
+          <span class="lang-pill-tag">Odia</span>
+          <span class="lang-pill-tag">Sinhala</span>
+          <span class="lang-pill-tag">Konkani</span>
+          <span class="lang-pill-tag">Kashmiri</span>
+          <span class="lang-pill-tag">Maithili</span>
+          <span class="lang-pill-tag">Dogri</span>
+          <span class="lang-pill-tag">Sanskrit</span>
+          <span class="lang-pill-tag">Santali</span>
+          <span class="lang-pill-tag">Manipuri</span>
+          <span class="lang-pill-tag">Bodo</span>
+        </div>
+      </div>
+
+      <!-- Central Asia & Caucasus -->
+      <div class="lang-region-row">
+        <div class="lang-region-label">Central Asia & Caucasus</div>
+        <div class="lang-pills">
+          <span class="lang-pill-tag highlight">Kazakh</span>
+          <span class="lang-pill-tag highlight">Kyrgyz</span>
+          <span class="lang-pill-tag highlight">Uzbek</span>
+          <span class="lang-pill-tag">Tajik</span>
+          <span class="lang-pill-tag">Armenian</span>
+          <span class="lang-pill-tag">Azerbaijani</span>
+          <span class="lang-pill-tag">Georgian</span>
+        </div>
+      </div>
+
+      <!-- Middle East -->
+      <div class="lang-region-row">
+        <div class="lang-region-label">Middle East</div>
+        <div class="lang-pills">
+          <span class="lang-pill-tag highlight">Arabic</span>
+          <span class="lang-pill-tag highlight">Persian (Farsi)</span>
+          <span class="lang-pill-tag">Turkish</span>
+          <span class="lang-pill-tag">Hebrew</span>
+          <span class="lang-pill-tag">Kurdish</span>
+          <span class="lang-pill-tag">Pashto</span>
+        </div>
+      </div>
+
+      <!-- Africa -->
+      <div class="lang-region-row">
+        <div class="lang-region-label">Africa</div>
+        <div class="lang-pills">
+          <span class="lang-pill-tag highlight">Swahili</span>
+          <span class="lang-pill-tag highlight">Hausa</span>
+          <span class="lang-pill-tag highlight">Amharic</span>
+          <span class="lang-pill-tag">Igbo</span>
+          <span class="lang-pill-tag">Afrikaans</span>
+          <span class="lang-pill-tag">Somali</span>
+          <span class="lang-pill-tag">Wolof</span>
+          <span class="lang-pill-tag">Xhosa</span>
+          <span class="lang-pill-tag">Zulu</span>
+          <span class="lang-pill-tag">Shona</span>
+          <span class="lang-pill-tag">Lingala</span>
+          <span class="lang-pill-tag">Chichewa</span>
+          <span class="lang-pill-tag">Fulah</span>
+          <span class="lang-pill-tag">Luganda</span>
+          <span class="lang-pill-tag">Luo</span>
+          <span class="lang-pill-tag">Northern Sotho</span>
+          <span class="lang-pill-tag">Umbundu</span>
+          <span class="lang-pill-tag">Kabuverdianu</span>
+          <span class="lang-pill-tag">Yoruba</span>
+          <span class="lang-pill-tag">Twi</span>
+          <span class="lang-pill-tag">Kinyarwanda</span>
+          <span class="lang-pill-tag">Oromo</span>
+          <span class="lang-pill-tag">Tswana</span>
+          <span class="lang-pill-tag">Sotho</span>
+          <span class="lang-pill-tag">Akan</span>
+          <span class="lang-pill-tag">Nigerian Pidgin</span>
+          <span class="lang-pill-tag">Bemba</span>
+          <span class="lang-pill-tag">Nyankole</span>
+          <span class="lang-pill-tag">Ga</span>
+          <span class="lang-pill-tag">African-accented English</span>
+        </div>
+      </div>
+
+      <!-- Europe -->
+      <div class="lang-region-row">
+        <div class="lang-region-label">Europe</div>
+        <div class="lang-pills">
+          <span class="lang-pill-tag highlight">English</span>
+          <span class="lang-pill-tag highlight">French</span>
+          <span class="lang-pill-tag highlight">German</span>
+          <span class="lang-pill-tag highlight">Spanish</span>
+          <span class="lang-pill-tag highlight">Portuguese</span>
+          <span class="lang-pill-tag">Italian</span>
+          <span class="lang-pill-tag">Russian</span>
+          <span class="lang-pill-tag">Dutch</span>
+          <span class="lang-pill-tag">Polish</span>
+          <span class="lang-pill-tag">Ukrainian</span>
+          <span class="lang-pill-tag">Romanian</span>
+          <span class="lang-pill-tag">Czech</span>
+          <span class="lang-pill-tag">Hungarian</span>
+          <span class="lang-pill-tag">Swedish</span>
+          <span class="lang-pill-tag">Bulgarian</span>
+          <span class="lang-pill-tag">Serbian</span>
+          <span class="lang-pill-tag">Norwegian</span>
+          <span class="lang-pill-tag">Finnish</span>
+          <span class="lang-pill-tag">Danish</span>
+          <span class="lang-pill-tag">Slovak</span>
+          <span class="lang-pill-tag">Croatian</span>
+          <span class="lang-pill-tag">Lithuanian</span>
+          <span class="lang-pill-tag">Slovenian</span>
+          <span class="lang-pill-tag">Latvian</span>
+          <span class="lang-pill-tag">Estonian</span>
+          <span class="lang-pill-tag">Greek</span>
+          <span class="lang-pill-tag">Belarusian</span>
+          <span class="lang-pill-tag">Catalan</span>
+          <span class="lang-pill-tag">Bosnian</span>
+          <span class="lang-pill-tag">Macedonian</span>
+          <span class="lang-pill-tag">Galician</span>
+          <span class="lang-pill-tag">Luxembourgish</span>
+          <span class="lang-pill-tag">Maltese</span>
+          <span class="lang-pill-tag">Icelandic</span>
+          <span class="lang-pill-tag">Irish</span>
+          <span class="lang-pill-tag">Welsh</span>
+          <span class="lang-pill-tag">Asturian</span>
+          <span class="lang-pill-tag">Occitan</span>
+        </div>
+      </div>
+
+      <!-- Pacific -->
+      <div class="lang-region-row">
+        <div class="lang-region-label">Pacific</div>
+        <div class="lang-pills">
+          <span class="lang-pill-tag highlight">Māori</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr>
 
 <!-- ════════════════════════════════════
      CONTACT / CTA
 ════════════════════════════════════ -->
 <section id="contact" class="contact-section">
   <div class="section-inner">
-    <div class="section-eyebrow en">Get Started</div>
-    <div class="section-eyebrow zh">立即开始</div>
-    <div class="section-h2 en">Ready to Bring VALSEA to China?</div>
-    <div class="section-h2 zh">准备好将 VALSEA 引入中国市场了吗？</div>
-    <p class="section-lead en">We are actively recruiting distribution partners across China to serve the China–Africa and China–Southeast Asia corridors. Partner capacity is limited — we are looking for partners who move fast and think long-term.</p>
-    <p class="section-lead zh">我们正积极招募中国分销合作伙伴，共同服务中非及中国–东南亚走廊。合作名额有限——我们寻找行动迅速、着眼长远的合作伙伴。</p>
+    <div class="section-eyebrow en">Apply</div>
+    <div class="section-eyebrow zh">立即申请</div>
+    <div class="section-h2 en">Ready to Distribute VALSEA?</div>
+    <div class="section-h2 zh">准备好分销 VALSEA 了吗？</div>
+    <p class="section-lead en">We're actively recruiting distribution partners across all corridors. Tell us your market, your vertical, and your network — and we'll get you set up with a promo code, sandbox access, and sales materials within 48 hours.</p>
+    <p class="section-lead zh">我们正在各走廊积极招募分销合作伙伴。告诉我们您的市场、行业和网络——我们将在 48 小时内为您配置促销代码、沙盒访问和销售资料。</p>
 
     <div class="contact-ctas">
       <a href="mailto:partner@valsea.ai" class="btn btn-primary" style="padding:14px 32px;font-size:15px;">
@@ -1523,15 +1369,11 @@ curl -X POST https://api.valsea.ai/v1/understand \
         💬 <span class="en">WeChat: valzxc_</span><span class="zh">微信：valzxc_</span>
       </div>
       <a href="http://wa.me/+6589537622" target="_blank" class="contact-method">
-        📱 <span class="en">WhatsApp</span><span class="zh">WhatsApp</span>
+        📱 WhatsApp
       </a>
       <a href="https://valsea.ai/docs" target="_blank" class="contact-method">
-        📖 <span class="en">API Docs: valsea.ai/docs</span><span class="zh">API 文档：valsea.ai/docs</span>
+        📖 <span class="en">API Docs</span><span class="zh">API 文档</span>
       </a>
-      <div class="contact-method">
-        📍 <span class="en">Singapore HQ &nbsp;·&nbsp; China deployments available</span>
-            <span class="zh">新加坡总部 &nbsp;·&nbsp; 支持中国区域部署</span>
-      </div>
     </div>
   </div>
 </section>
@@ -1542,12 +1384,13 @@ curl -X POST https://api.valsea.ai/v1/understand \
 ════════════════════════════════════ -->
 <footer>
   <div class="footer-logo">VALSEA</div>
-  <div class="footer-note en">© 2025 VALSEA Pte. Ltd. &nbsp;·&nbsp; China Distribution Partner Portal</div>
-  <div class="footer-note zh">© 2025 VALSEA Pte. Ltd. &nbsp;·&nbsp; 中国分销合作伙伴门户</div>
+  <div class="footer-note en">© 2026 VALSEA Pte. Ltd. · Partner Program</div>
+  <div class="footer-note zh">© 2026 VALSEA Pte. Ltd. · 合作伙伴计划</div>
   <ul class="footer-links">
+    <li><a href="affiliate.html"><span class="en">Affiliate Program</span><span class="zh">推广联盟</span></a></li>
     <li><a href="mailto:partner@valsea.ai"><span class="en">Contact</span><span class="zh">联系我们</span></a></li>
     <li><a href="https://valsea.ai/docs" target="_blank"><span class="en">API Docs</span><span class="zh">API 文档</span></a></li>
-    <li><a href="#"><span class="en">Privacy Policy</span><span class="zh">隐私政策</span></a></li>
+    <li><a href="#"><span class="en">Privacy</span><span class="zh">隐私政策</span></a></li>
     <li><a href="#"><span class="en">Terms</span><span class="zh">服务条款</span></a></li>
   </ul>
 </footer>
@@ -1555,16 +1398,12 @@ curl -X POST https://api.valsea.ai/v1/understand \
 
 <script>
   function setLang(lang) {
-    // Swap root class
     document.documentElement.className = 'lang-' + lang;
-    // Update html lang attr for screen readers / SEO
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    // Toggle pill button states
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
   }
 
-  // Smooth scroll for nav anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
