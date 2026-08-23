@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VALSEA — China–Africa Pilot Offer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink: #db2777;
+      --pink-dim: #9d174d;
+      --pink-bg: rgba(219,39,119,0.06);
+      --green: #0F6E56;
+      --green-bg: rgba(15,110,86,0.07);
+      --blue: #185FA5;
+      --text: #0f1720;
+      --muted: #5a6a87;
+      --dim: #94a3b8;
+      --card: #f8f9fc;
+      --border: #e2e8f0;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 40px 64px;
+    }
+
+    @media print {
+      .page { padding: 32px 24px; }
+      .no-print { display: none !important; }
+    }
+
+    /* Header */
+    .header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 48px; padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .logomark {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--pink), var(--pink-dim));
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 11px; color: white;
+      letter-spacing: -0.5px;
+    }
+    .wordmark { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; }
+    .doc-type {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--pink);
+      background: var(--pink-bg); padding: 4px 12px;
+      border-radius: 100px; border: 1px solid rgba(219,39,119,0.18);
+    }
+
+    /* Title */
+    h1 {
+      font-size: 32px; font-weight: 900; letter-spacing: -1.2px;
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    h1 span { color: var(--pink); }
+    .subtitle {
+      font-size: 16px; color: var(--muted); line-height: 1.7;
+      margin-bottom: 40px; max-width: 620px;
+    }
+
+    /* Sections */
+    .section { margin-bottom: 40px; }
+    .section-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--pink);
+      margin-bottom: 14px;
+    }
+    h2 {
+      font-size: 20px; font-weight: 800; letter-spacing: -0.5px;
+      margin-bottom: 14px;
+    }
+    p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+
+    /* Timeline */
+    .timeline {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+      margin-top: 16px;
+    }
+    .tl-step {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 18px 16px;
+    }
+    .tl-week {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--pink); margin-bottom: 8px;
+    }
+    .tl-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+    .tl-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* Differentiators */
+    .diff-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      margin-top: 16px;
+    }
+    .diff-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 18px 16px;
+    }
+    .diff-card h4 {
+      font-size: 13px; font-weight: 700; margin-bottom: 4px;
+    }
+    .diff-card p { font-size: 12px; margin-bottom: 0; }
+
+    /* Pricing table */
+    .price-table {
+      width: 100%; border-collapse: collapse;
+      border: 1px solid var(--border); border-radius: 10px;
+      overflow: hidden; margin-top: 16px;
+    }
+    .price-table th {
+      text-align: left; padding: 12px 16px;
+      font-size: 10px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--muted);
+      background: var(--card); border-bottom: 1px solid var(--border);
+    }
+    .price-table td {
+      padding: 14px 16px; font-size: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .price-table tr:last-child td { border-bottom: none; }
+    .price-table .price { font-weight: 800; color: var(--pink); }
+
+    /* Metrics */
+    .metrics-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      margin-top: 16px;
+    }
+    .metric {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 18px 16px;
+    }
+    .metric-value {
+      font-size: 24px; font-weight: 900; color: var(--pink);
+      letter-spacing: -1px; margin-bottom: 4px;
+    }
+    .metric-label { font-size: 12px; color: var(--muted); }
+
+    /* CTA */
+    .cta-block {
+      margin-top: 48px; padding: 32px;
+      background: linear-gradient(135deg, #080e1a, #0f1d36);
+      border-radius: 14px; text-align: center;
+    }
+    .cta-block h3 {
+      font-size: 20px; font-weight: 800; color: white;
+      margin-bottom: 8px; letter-spacing: -0.5px;
+    }
+    .cta-block p { color: rgba(255,255,255,0.55); font-size: 14px; margin-bottom: 20px; }
+    .cta-block a {
+      display: inline-block; padding: 12px 28px;
+      background: var(--pink); color: white;
+      border-radius: 8px; font-size: 14px; font-weight: 700;
+      text-decoration: none; transition: background 0.15s;
+    }
+    .cta-block a:hover { background: var(--pink-dim); }
+
+    .contact-row {
+      display: flex; justify-content: center; gap: 24px;
+      margin-top: 16px; flex-wrap: wrap;
+    }
+    .contact-row span {
+      font-size: 13px; color: rgba(255,255,255,0.5);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 40px; padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 11px; color: var(--dim);
+      display: flex; justify-content: space-between;
+    }
+
+    @media (max-width: 700px) {
+      .page { padding: 32px 20px 40px; }
+      h1 { font-size: 24px; }
+      .timeline { grid-template-columns: 1fr 1fr; }
+      .diff-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">
+      <div class="logomark">VS</div>
+      <div class="wordmark">VALSEA</div>
+    </div>
+    <div class="doc-type">Pilot Offer</div>
+  </div>
+
+  <!-- TITLE -->
+  <h1>Mandarin ↔ Local Language <span>Speech Intelligence</span> for Chinese-Invested Operations in Africa</h1>
+  <p class="subtitle">A 4-week paid pilot proving VALSEA can transcribe, translate, and structure multilingual voice data from real on-site operations — construction meetings, BPO calls, logistics coordination — where no global ASR provider can deliver.</p>
+
+  <!-- THE PROBLEM -->
+  <div class="section">
+    <div class="section-label">The Problem</div>
+    <h2>Global speech engines fail on China–Africa language pairs</h2>
+    <p>Chinese enterprises operating in Africa face daily communication gaps. Supervisors speak Mandarin; local teams speak Swahili, Amharic, or African-accented English. Google, Azure, and AWS do not support Mandarin↔Swahili. Human interpreters cost $1,000–$1,500/month per person. Errors cause safety incidents, project delays, and compliance failures.</p>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="section">
+    <div class="section-label">Pilot Structure</div>
+    <h2>4 weeks. Real audio. Measurable results.</h2>
+    <div class="timeline">
+      <div class="tl-step">
+        <div class="tl-week">Week 1</div>
+        <div class="tl-title">Setup</div>
+        <div class="tl-desc">API credentials, corridor config, accent calibration, integration with your call/meeting platform.</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-week">Week 2–3</div>
+        <div class="tl-title">Live Transcription</div>
+        <div class="tl-desc">Process 50–200 hrs of real mixed-language audio. Deliver structured transcripts, meeting notes, and action items.</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-week">Week 3</div>
+        <div class="tl-title">Benchmarking</div>
+        <div class="tl-desc">Head-to-head vs. Google/Azure/AWS on your audio corpus. WER comparison on code-switched segments.</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-week">Week 4</div>
+        <div class="tl-title">Results</div>
+        <div class="tl-desc">Accuracy report, integration docs, production deployment plan. Convert or walk away.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS METRICS -->
+  <div class="section">
+    <div class="section-label">Success Metrics</div>
+    <h2>What we're proving</h2>
+    <div class="metrics-grid">
+      <div class="metric">
+        <div class="metric-value">≤15%</div>
+        <div class="metric-label">WER on Mandarin↔Swahili code-switching (vs. 30–50% for incumbents)</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">≥60%</div>
+        <div class="metric-label">Reduction in manual validation / correction time</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">≤5 days</div>
+        <div class="metric-label">Time from API key to first structured output in production</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">≥50%</div>
+        <div class="metric-label">Relative WER improvement vs. Google / Azure / AWS on same audio</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY DIFFERENT -->
+  <div class="section">
+    <div class="section-label">Why VALSEA</div>
+    <h2>What makes this different</h2>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <h4>Mandarin↔Swahili Pipeline</h4>
+        <p>Does not exist at Google, Azure, or AWS. Zero-competition positioning. VALSEA is the only option.</p>
+      </div>
+      <div class="diff-card">
+        <h4>African Accent Handling</h4>
+        <p>11–18% WER vs. 20–50% for incumbents. Powered by 220+ African accent profiles.</p>
+      </div>
+      <div class="diff-card">
+        <h4>Structured Output</h4>
+        <p>Not raw transcription — meeting notes, compliance docs, action items ready for workflow integration.</p>
+      </div>
+      <div class="diff-card">
+        <h4>China Data Residency</h4>
+        <p>Audio stays in-region. No cross-border transfer. Full PIPL compliance for Chinese enterprise customers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="section">
+    <div class="section-label">Pilot Pricing</div>
+    <h2>Paid pilot. No long-term commitment.</h2>
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Scope</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Starter</strong></td>
+          <td>Single site, 50 hrs audio, 1 language pair</td>
+          <td class="price">$5,000</td>
+        </tr>
+        <tr>
+          <td><strong>Standard</strong></td>
+          <td>Multi-site, 200 hrs audio, 2–3 language pairs</td>
+          <td class="price">$10,000</td>
+        </tr>
+        <tr>
+          <td><strong>Enterprise</strong></td>
+          <td>Custom scope, on-premise option, SLA guarantee</td>
+          <td class="price">Custom</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>Ready to pilot?</h3>
+    <p>We can have you processing real audio within 5 business days.</p>
+    <a href="mailto:partner@valsea.ai">Start a Conversation →</a>
+    <div class="contact-row">
+      <span>partner@valsea.ai</span>
+      <span>WeChat: valzxc_</span>
+      <span>WhatsApp: +65 8953 7622</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>VALSEA Pte. Ltd. · Singapore</span>
+    <span>Confidential · August 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>

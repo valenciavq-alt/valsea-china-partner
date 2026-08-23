@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="lang-en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join the VALSEA Affiliate Program and earn recurring commission by introducing teams to speech AI built for Southeast Asia and emerging markets.">
+  <title>VALSEA — Affiliate Program</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink:#db2777; --pink-dark:#be185d; --pink-soft:#fdf2f8;
+      --ink:#111827; --muted:#64748b; --line:#e5e7eb; --soft:#f8fafc;
+      --green:#059669; --violet:#7c3aed; --navy:#0b1020;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:#fff; -webkit-font-smoothing:antialiased; }
+    html.lang-en .zh { display:none!important; }
+    html.lang-zh .en { display:none!important; }
+    html.lang-zh body { font-family:"PingFang SC","Microsoft YaHei",Inter,sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    nav { height:68px; padding:0 40px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:20; background:rgba(255,255,255,.92); backdrop-filter:blur(14px); border-bottom:1px solid rgba(229,231,235,.8); }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:-.5px; }
+    .mark { width:34px; height:34px; display:grid; place-items:center; border-radius:9px; background:var(--ink); color:#fff; font-size:11px; }
+    .program-tag { color:var(--muted); font-size:12px; font-weight:600; padding-left:10px; border-left:1px solid var(--line); }
+    .nav-right,.hero-actions,.contact-row { display:flex; align-items:center; gap:12px; }
+    .back { font-size:13px; font-weight:600; color:var(--muted); }
+    .back:hover { color:var(--ink); }
+    .lang-pill { display:flex; padding:3px; border-radius:9px; background:#f1f5f9; }
+    .lang-pill button { border:0; background:transparent; padding:6px 8px; border-radius:7px; color:var(--muted); font:700 11px Inter; cursor:pointer; }
+    .lang-pill button.active { color:var(--ink); background:#fff; box-shadow:0 1px 3px rgba(15,23,42,.12); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 19px; border-radius:9px; font-size:13px; font-weight:700; transition:.18s ease; }
+    .btn-primary { color:white; background:var(--pink); box-shadow:0 7px 20px rgba(219,39,119,.2); }
+    .btn-primary:hover { background:var(--pink-dark); transform:translateY(-1px); }
+    .btn-secondary { background:#fff; border:1px solid var(--line); color:var(--ink); }
+    .btn-secondary:hover { border-color:#cbd5e1; background:var(--soft); }
+    .hero { overflow:hidden; position:relative; padding:92px 40px 76px; background:radial-gradient(circle at 80% 15%,rgba(219,39,119,.13),transparent 28%),radial-gradient(circle at 68% 80%,rgba(124,58,237,.09),transparent 25%),#fff; }
+    .hero-inner { max-width:1120px; margin:auto; display:grid; grid-template-columns:1.15fr .85fr; gap:72px; align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; padding:6px 11px; border:1px solid #fbcfe8; border-radius:999px; background:var(--pink-soft); color:var(--pink-dark); font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.9px; margin-bottom:22px; }
+    .eyebrow:before { content:""; width:7px; height:7px; background:var(--pink); border-radius:50%; box-shadow:0 0 0 4px rgba(219,39,119,.1); }
+    h1 { max-width:720px; font-size:57px; line-height:1.05; letter-spacing:-3px; font-weight:900; }
+    h1 span { color:var(--pink); }
+    .hero-copy { max-width:625px; margin:24px 0 32px; color:var(--muted); font-size:18px; line-height:1.7; }
+    .micro { margin-top:14px; color:#94a3b8; font-size:11px; }
+    .earn-card { padding:28px; border:1px solid rgba(219,39,119,.18); border-radius:20px; background:rgba(255,255,255,.84); box-shadow:0 24px 70px rgba(15,23,42,.12); transform:rotate(1.5deg); }
+    .earn-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; }
+    .earn-label { color:var(--muted); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.8px; }
+    .live { padding:5px 9px; background:#ecfdf5; color:var(--green); border-radius:99px; font-size:10px; font-weight:800; }
+    .commission { font-size:70px; font-weight:900; letter-spacing:-5px; line-height:.95; }
+    .commission span { color:var(--pink); }
+    .commission-note { color:var(--muted); font-size:13px; margin:10px 0 26px; }
+    .mini-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .mini { padding:15px; border-radius:12px; background:var(--soft); border:1px solid #f1f5f9; }
+    .mini strong { display:block; font-size:17px; margin-bottom:4px; }
+    .mini span { color:var(--muted); font-size:11px; }
+    section { padding:84px 40px; }
+    .wrap { max-width:1120px; margin:auto; }
+    .section-kicker { color:var(--pink); text-transform:uppercase; letter-spacing:1.4px; font-size:11px; font-weight:800; margin-bottom:13px; }
+    h2 { font-size:38px; line-height:1.15; letter-spacing:-1.6px; font-weight:900; max-width:650px; }
+    .lead { color:var(--muted); line-height:1.7; font-size:16px; margin-top:16px; max-width:660px; }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:42px; }
+    .step { position:relative; padding:28px; min-height:225px; border:1px solid var(--line); border-radius:16px; background:#fff; }
+    .step-no { width:35px; height:35px; display:grid; place-items:center; border-radius:10px; background:var(--ink); color:#fff; font-size:12px; font-weight:800; margin-bottom:28px; }
+    .step h3,.benefit h3 { font-size:16px; margin-bottom:10px; }
+    .step p,.benefit p { color:var(--muted); font-size:13px; line-height:1.65; }
+    .economics { background:var(--navy); color:#fff; }
+    .economics .section-kicker { color:#f9a8d4; }
+    .economics .lead { color:#94a3b8; }
+    .money-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:50px; align-items:start; margin-top:42px; }
+    .example { padding:28px; border:1px solid rgba(255,255,255,.1); border-radius:16px; background:rgba(255,255,255,.05); }
+    .example-title { color:#94a3b8; font-size:11px; text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:20px; }
+    .calc-row { display:flex; justify-content:space-between; gap:20px; padding:15px 0; border-bottom:1px solid rgba(255,255,255,.08); font-size:13px; }
+    .calc-row span { color:#94a3b8; }
+    .calc-row.total { border:0; padding-bottom:0; font-size:18px; font-weight:800; }
+    .calc-row.total strong { color:#f9a8d4; }
+    .terms { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .term { padding:19px; border-radius:13px; background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.08); }
+    .term strong { display:block; font-size:20px; margin-bottom:6px; }
+    .term span { color:#94a3b8; font-size:11px; line-height:1.5; }
+    .benefits { background:var(--soft); }
+    .benefit-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:40px; }
+    .benefit { padding:24px; border-radius:14px; border:1px solid var(--line); background:#fff; }
+    .icon { width:39px; height:39px; display:grid; place-items:center; margin-bottom:19px; border-radius:10px; background:var(--pink-soft); font-size:18px; }
+    .fit-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+    .check-list { list-style:none; margin-top:26px; display:grid; gap:14px; }
+    .check-list li { display:flex; gap:12px; color:#475569; font-size:14px; line-height:1.5; }
+    .check { flex:0 0 22px; width:22px; height:22px; display:grid; place-items:center; border-radius:50%; background:#ecfdf5; color:var(--green); font-size:11px; font-weight:900; }
+    .not-fit { padding:30px; border-radius:17px; border:1px solid var(--line); background:var(--soft); }
+    .not-fit h3 { font-size:17px; margin-bottom:14px; }
+    .not-fit p { color:var(--muted); font-size:13px; line-height:1.7; }
+    .not-fit a { color:var(--pink); font-weight:700; }
+    .cta { padding:82px 40px; text-align:center; background:linear-gradient(135deg,#831843,#db2777); color:#fff; }
+    .cta h2 { margin:auto; max-width:720px; }
+    .cta p { max-width:590px; margin:17px auto 28px; color:rgba(255,255,255,.72); line-height:1.7; }
+    .cta .btn { padding:14px 24px; background:#fff; color:var(--pink-dark); }
+    footer { padding:25px 40px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); color:var(--muted); font-size:11px; }
+    footer strong { color:var(--ink); }
+    footer div { display:flex; gap:20px; }
+    @media(max-width:850px) {
+      nav { padding:0 18px; height:60px; } .program-tag,.back { display:none; }
+      .hero { padding:62px 22px 56px; } .hero-inner,.money-grid,.fit-grid { grid-template-columns:1fr; gap:40px; }
+      h1 { font-size:42px; letter-spacing:-2px; } .earn-card { max-width:500px; transform:none; }
+      section { padding:62px 22px; } .steps,.benefit-grid { grid-template-columns:1fr; }
+      .step { min-height:auto; } footer { padding:22px; flex-direction:column; gap:12px; }
+    }
+    @media(max-width:480px) {
+      .brand { font-size:14px; } .nav-right .btn { display:none; }
+      h1 { font-size:37px; } h2 { font-size:30px; } .hero-copy { font-size:16px; }
+      .hero-actions { align-items:stretch; flex-direction:column; } .hero-actions .btn { width:100%; }
+      .commission { font-size:60px; } .terms { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="brand" href="index.html"><span class="mark">VS</span> VALSEA <span class="program-tag en">Affiliate Program</span><span class="program-tag zh">推广联盟</span></a>
+    <div class="nav-right">
+      <a class="back" href="index.html"><span class="en">Partner program</span><span class="zh">合作伙伴计划</span></a>
+      <div class="lang-pill"><button id="btn-en" class="active" onclick="setLang('en')">EN</button><button id="btn-zh" onclick="setLang('zh')">中文</button></div>
+      <a class="btn btn-primary" href="#apply"><span class="en">Apply now</span><span class="zh">立即申请</span></a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow en">Affiliate applications open</div><div class="eyebrow zh">推广联盟开放申请</div>
+        <h1 class="en">Share the signal.<br><span>Earn on every success.</span></h1>
+        <h1 class="zh">分享机遇，<br><span>持续获得收益。</span></h1>
+        <p class="hero-copy en">Introduce your audience to speech AI built for Southeast Asia and emerging markets. We handle the product, demos, and onboarding—you earn recurring commission.</p>
+        <p class="hero-copy zh">向您的受众推荐专为东南亚及新兴市场打造的语音 AI。产品、演示和客户引导由我们负责，您持续获得佣金。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#apply"><span class="en">Become an affiliate →</span><span class="zh">成为推广伙伴 →</span></a>
+          <a class="btn btn-secondary" href="#how"><span class="en">See how it works</span><span class="zh">了解运作方式</span></a>
+        </div>
+        <div class="micro en">Free to join · No sales quota · Transparent attribution</div>
+        <div class="micro zh">免费加入 · 无销售指标 · 归因透明</div>
+      </div>
+      <aside class="earn-card">
+        <div class="earn-top"><span class="earn-label en">Launch commission</span><span class="earn-label zh">首发佣金</span><span class="live en">NOW OPEN</span><span class="live zh">现已开放</span></div>
+        <div class="commission">20<span>%</span></div>
+        <div class="commission-note en">recurring commission for 12 months</div><div class="commission-note zh">连续 12 个月的经常性佣金</div>
+        <div class="mini-grid">
+          <div class="mini"><strong>90 days</strong><span class="en">referral window</span><span class="zh">推荐有效期</span></div>
+          <div class="mini"><strong>Monthly</strong><span class="en">payout cycle</span><span class="zh">结算周期</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="how"><div class="wrap">
+    <div class="section-kicker en">How it works</div><div class="section-kicker zh">运作方式</div>
+    <h2 class="en">Three steps from introduction to income.</h2><h2 class="zh">三步开启推荐收益。</h2>
+    <p class="lead en">You bring the trusted introduction. VALSEA takes it from there—with tracking that keeps your contribution visible.</p>
+    <p class="lead zh">您负责建立信任与引荐，后续由 VALSEA 接手，并通过清晰的追踪机制记录您的贡献。</p>
+    <div class="steps">
+      <article class="step"><div class="step-no">01</div><h3 class="en">Apply and get approved</h3><h3 class="zh">提交申请并通过审核</h3><p class="en">Tell us about your audience and channels. Approved affiliates receive a personal referral link and partner kit.</p><p class="zh">介绍您的受众和推广渠道。审核通过后，您将获得专属推荐链接和推广资料包。</p></article>
+      <article class="step"><div class="step-no">02</div><h3 class="en">Share VALSEA</h3><h3 class="zh">分享 VALSEA</h3><p class="en">Publish content, make warm introductions, or invite prospects to a demo. Your link tracks qualified referrals for 90 days.</p><p class="zh">通过内容、直接引荐或演示邀请进行推广。专属链接将在 90 天内追踪有效推荐。</p></article>
+      <article class="step"><div class="step-no">03</div><h3 class="en">Earn as they grow</h3><h3 class="zh">随客户成长持续获益</h3><p class="en">When a referred customer becomes a paying VALSEA client, you earn 20% of eligible revenue for their first 12 months.</p><p class="zh">当推荐客户成为 VALSEA 付费客户，您可在其首 12 个月获得符合条件收入的 20%。</p></article>
+    </div>
+  </div></section>
+
+  <section class="economics"><div class="wrap">
+    <div class="section-kicker en">Simple economics</div><div class="section-kicker zh">清晰的收益机制</div>
+    <h2 class="en">Your referrals compound.</h2><h2 class="zh">推荐越多，收益持续累积。</h2>
+    <p class="lead en">Earn from every eligible subscription payment—not just the first invoice.</p><p class="lead zh">每笔符合条件的订阅付款均可产生佣金，而非仅限首张账单。</p>
+    <div class="money-grid">
+      <div class="example">
+        <div class="example-title en">Illustrative referral</div><div class="example-title zh">推荐收益示例</div>
+        <div class="calc-row"><span class="en">Customer monthly plan</span><span class="zh">客户月度方案</span><strong>US$1,000</strong></div>
+        <div class="calc-row"><span class="en">Your commission rate</span><span class="zh">您的佣金比例</span><strong>20%</strong></div>
+        <div class="calc-row"><span class="en">Commission period</span><span class="zh">佣金周期</span><strong>12 months</strong></div>
+        <div class="calc-row total"><span class="en">Potential total</span><span class="zh">潜在总收益</span><strong>US$2,400</strong></div>
+      </div>
+      <div class="terms">
+        <div class="term"><strong>20%</strong><span class="en">of eligible net revenue</span><span class="zh">符合条件的净收入</span></div>
+        <div class="term"><strong>12 mo</strong><span class="en">commission duration</span><span class="zh">佣金有效期</span></div>
+        <div class="term"><strong>90 days</strong><span class="en">last-click attribution</span><span class="zh">末次点击归因</span></div>
+        <div class="term"><strong>US$100</strong><span class="en">minimum payout</span><span class="zh">最低结算金额</span></div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="benefits"><div class="wrap">
+    <div class="section-kicker en">Built to help you convert</div><div class="section-kicker zh">助您高效转化</div>
+    <h2 class="en">More than a referral link.</h2><h2 class="zh">不止是一个推荐链接。</h2>
+    <div class="benefit-grid">
+      <article class="benefit"><div class="icon">↗</div><h3 class="en">Live attribution</h3><h3 class="zh">实时归因</h3><p class="en">See clicks, qualified leads, conversions, and commission in one clear view.</p><p class="zh">集中查看点击、有效线索、转化和佣金数据。</p></article>
+      <article class="benefit"><div class="icon">▣</div><h3 class="en">Ready-made content</h3><h3 class="zh">现成推广内容</h3><p class="en">Use product explainers, social copy, visuals, and audience-specific talking points.</p><p class="zh">获取产品说明、社交文案、视觉素材和受众专属话术。</p></article>
+      <article class="benefit"><div class="icon">◎</div><h3 class="en">Demo support</h3><h3 class="zh">演示支持</h3><p class="en">For qualified opportunities, our team joins demos and handles technical questions.</p><p class="zh">针对有效商机，我们的团队可参与演示并解答技术问题。</p></article>
+    </div>
+  </div></section>
+
+  <section><div class="wrap fit-grid">
+    <div>
+      <div class="section-kicker en">Who it is for</div><div class="section-kicker zh">适合人群</div>
+      <h2 class="en">Trusted voices in technology and business.</h2><h2 class="zh">科技与商业领域的可信影响者。</h2>
+      <ul class="check-list">
+        <li><span class="check">✓</span><span class="en">AI, developer, SaaS, and cloud creators</span><span class="zh">AI、开发者、SaaS 及云技术内容创作者</span></li>
+        <li><span class="check">✓</span><span class="en">Consultants, educators, and community leaders</span><span class="zh">顾问、教育者及社群负责人</span></li>
+        <li><span class="check">✓</span><span class="en">Agencies and independent technology advisors</span><span class="zh">代理机构及独立技术顾问</span></li>
+        <li><span class="check">✓</span><span class="en">Newsletter, podcast, and professional network operators</span><span class="zh">通讯、播客及专业社交网络运营者</span></li>
+      </ul>
+    </div>
+    <aside class="not-fit">
+      <h3 class="en">Need to resell, implement, or embed VALSEA?</h3><h3 class="zh">希望转售、实施或嵌入 VALSEA？</h3>
+      <p class="en">The affiliate program is designed for introductions. For deal ownership, implementation services, volume pricing, or API embedding, our <a href="index.html">Partner Program</a> is the better fit.</p>
+      <p class="zh">推广联盟适用于客户引荐。如需主导交易、提供实施服务、获取批量价格或嵌入 API，请了解我们的<a href="index.html">合作伙伴计划</a>。</p>
+    </aside>
+  </div></section>
+
+  <section id="apply" class="cta">
+    <h2 class="en">Turn your network into recurring value.</h2><h2 class="zh">让您的网络持续创造价值。</h2>
+    <p class="en">Tell us where you create influence and who you serve. We review applications within two business days.</p><p class="zh">告诉我们您的影响力渠道及服务受众。我们将在两个工作日内完成申请审核。</p>
+    <a class="btn" href="mailto:partner@valsea.ai?subject=VALSEA%20Affiliate%20Program%20Application&body=Name%3A%0ACompany%20or%20channel%3A%0AWebsite%3A%0AAudience%20and%20region%3A%0AHow%20I%20plan%20to%20promote%20VALSEA%3A"><span class="en">Apply to the affiliate program →</span><span class="zh">申请加入推广联盟 →</span></a>
+  </section>
+
+  <footer><strong>VALSEA</strong><span>© 2026 VALSEA Pte. Ltd.</span><div><a href="mailto:partner@valsea.ai">partner@valsea.ai</a><a href="index.html"><span class="en">Partner Program</span><span class="zh">合作伙伴计划</span></a></div></footer>
+  <script>
+    function setLang(lang) {
+      document.documentElement.className='lang-'+lang;
+      document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+      document.getElementById('btn-en').classList.toggle('active',lang==='en');
+      document.getElementById('btn-zh').classList.toggle('active',lang==='zh');
+      localStorage.setItem('valsea-lang',lang);
+    }
+    const saved=localStorage.getItem('valsea-lang'); if(saved==='zh') setLang('zh');
+  </script>
+</body>
+</html>
