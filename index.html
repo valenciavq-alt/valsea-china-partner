@@ -9,171 +9,108 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FFFFFF; --paper-soft:#F8F6FC; --surface:#F2EEFA; --surface-2:#EAE3F7;
-  --ink:#1B1730; --muted:#6E6880; --line:rgba(27,23,48,0.10);
-  --indigo:#3B2472; --violet:#8B2FA8; --teal:#12876F; --bad:#C15656;
+  --paper:#FFFFFF;--soft:#F8F6FC;--surface:#F2EEFA;
+  --ink:#1B1730;--muted:#6E6880;--line:rgba(27,23,48,0.10);
+  --indigo:#3B2472;--violet:#8B2FA8;--teal:#12876F;
   --grad:linear-gradient(135deg,var(--indigo),var(--violet));
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
 ::selection{background:var(--violet);color:#fff;}
 a{color:inherit;}
-.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
-.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px;}
-.eyebrow::before{content:'';width:16px;height:1px;background:var(--violet);display:inline-block;}
-h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:700;letter-spacing:-0.01em;color:var(--ink);}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:700;letter-spacing:-0.02em;color:var(--ink);}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--violet);margin-bottom:14px;}
 
-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
-.logo{font-family:'Poppins',sans-serif;font-weight:800;font-size:21px;letter-spacing:-0.01em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none;}
-.navlinks{display:flex;gap:28px;font-size:14px;color:var(--muted);}
-.navlinks a{text-decoration:none;transition:color .2s;padding-bottom:4px;border-bottom:2px solid transparent;}
-.navlinks a:hover{color:var(--ink);}
-.navlinks a.active{color:var(--ink);font-weight:600;border-bottom-color:var(--violet);}
-.nav-cta{font-family:'IBM Plex Mono',monospace;font-size:12.5px;border:1px solid var(--line);padding:8px 16px;border-radius:2px;text-decoration:none;color:var(--ink);transition:border-color .2s, background .2s;}
-.nav-cta:hover{border-color:var(--violet);background:var(--surface);}
-@media (max-width:760px){.navlinks{display:none;}}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;text-decoration:none;}
+.nav-cta{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--grad);color:#fff;padding:9px 18px;border-radius:6px;text-decoration:none;transition:opacity .15s;}
+.nav-cta:hover{opacity:0.9;}
 
-.hero{padding:90px 0 70px;border-bottom:1px solid var(--line);background:var(--paper);}
-.hero .eyebrow{margin-bottom:22px;}
-.hero h1{font-size:clamp(34px,5.2vw,58px);line-height:1.1;max-width:880px;margin-bottom:22px;font-weight:700;}
-.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
-.hero p.lede{font-size:17px;color:var(--muted);max-width:580px;margin-bottom:36px;}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
-
-.btn{font-family:'IBM Plex Mono',monospace;font-size:13px;padding:13px 22px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s, opacity .15s;border:none;cursor:pointer;}
+.btn{font-family:'IBM Plex Mono',monospace;font-size:13px;padding:14px 26px;border-radius:6px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;transition:transform .15s,opacity .15s;}
 .btn:hover{transform:translateY(-1px);}
-.btn-primary{background:var(--grad);color:#fff;font-weight:500;box-shadow:0 6px 18px rgba(139,47,168,0.24);}
-.btn-primary:hover{opacity:0.94;}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 6px 20px rgba(139,47,168,0.22);}
 .btn-ghost{border:1px solid var(--line);color:var(--ink);background:var(--paper);}
 .btn-ghost:hover{border-color:var(--violet);}
 
-section{padding:80px 0;border-bottom:1px solid var(--line);}
-.section-head{max-width:640px;margin-bottom:48px;}
-.section-head .eyebrow{margin-bottom:16px;}
-.section-head h2{font-size:clamp(26px,3.4vw,38px);line-height:1.18;margin-bottom:14px;}
-.section-head p{color:var(--muted);font-size:16px;}
+section{padding:72px 0;border-bottom:1px solid var(--line);}
 
-/* REVENUE SHARE */
-.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
-.rev-card{background:var(--paper-soft);padding:36px 32px;}
-.rev-card .r-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;display:block;}
-.rev-card.referral .r-eyebrow{color:var(--indigo);}
-.rev-card.reseller .r-eyebrow{color:var(--violet);}
-.rev-card h3{font-size:20px;margin-bottom:12px;}
-.rev-card .r-pct{font-family:'Poppins',sans-serif;font-weight:800;font-size:52px;margin-bottom:6px;}
-.rev-card.referral .r-pct{color:var(--indigo);}
-.rev-card.reseller .r-pct{color:var(--violet);}
-.rev-card .r-pct-label{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
-.rev-card p{color:var(--muted);font-size:14px;margin-bottom:14px;}
-.rev-card ul{list-style:none;font-size:13.5px;color:var(--ink);}
-.rev-card ul li{padding-left:16px;position:relative;margin-bottom:8px;}
+/* HERO */
+.hero{padding:80px 0 72px;border-bottom:1px solid var(--line);}
+.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.1;max-width:700px;margin-bottom:20px;}
+.hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero-sub{font-size:17px;color:var(--muted);max-width:520px;margin-bottom:32px;line-height:1.7;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* REVENUE */
+.rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:28px;}
+.rev-card{background:var(--soft);padding:36px 32px;}
+.rev-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.rev-card.referral .rev-label{color:var(--indigo);}
+.rev-card.reseller .rev-label{color:var(--violet);}
+.rev-card h3{font-size:18px;margin-bottom:14px;line-height:1.3;}
+.rev-pct{font-family:'Poppins',sans-serif;font-weight:800;font-size:56px;line-height:1;margin-bottom:6px;}
+.rev-card.referral .rev-pct{color:var(--indigo);}
+.rev-card.reseller .rev-pct{color:var(--violet);}
+.rev-terms{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.rev-card p{font-size:14px;color:var(--muted);margin-bottom:14px;line-height:1.6;}
+.rev-card ul{list-style:none;font-size:13.5px;}
+.rev-card ul li{padding-left:16px;position:relative;margin-bottom:7px;color:var(--ink);}
 .rev-card ul li::before{content:'\2014';position:absolute;left:0;color:var(--violet);}
-@media (max-width:820px){.rev-grid{grid-template-columns:1fr;}}
+@media (max-width:760px){.rev-grid{grid-template-columns:1fr;}}
 
-/* HOW STEPS */
-.how-steps{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
-.how-step{background:var(--paper-soft);padding:26px 30px;display:grid;grid-template-columns:44px 1fr;gap:20px;align-items:start;}
-.how-step .h-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:22px;color:var(--violet);}
-.how-step h4{font-size:15.5px;font-family:'Inter',sans-serif;font-weight:600;margin-bottom:6px;}
-.how-step p{font-size:13.5px;color:var(--muted);}
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+.step{background:var(--soft);padding:28px 24px;}
+.step-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:28px;color:var(--violet);opacity:0.3;margin-bottom:8px;}
+.step h4{font-size:15px;font-weight:600;margin-bottom:6px;}
+.step p{font-size:13px;color:var(--muted);line-height:1.55;}
+@media (max-width:760px){.steps{grid-template-columns:1fr;}}
 
-/* CORRIDORS */
-.corridor-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.c-card{border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .15s;}
-.c-card:hover{transform:translateY(-2px);}
-.c-header{padding:26px 26px 22px;color:white;}
-.c-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:6px;}
-.c-title{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:white;margin-bottom:4px;}
-.c-meta{font-size:12px;color:rgba(255,255,255,0.55);}
-.c-body{padding:22px 26px;background:var(--paper);}
-.c-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
-.c-usecases{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:16px;}
-.c-usecases li{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink);line-height:1.5;}
-.c-usecases li::before{content:'';width:5px;height:5px;background:var(--violet);border-radius:50%;flex-shrink:0;margin-top:7px;}
-.c-langs{display:flex;flex-wrap:wrap;gap:6px;}
-.lang-chip{padding:4px 10px;border-radius:100px;font-size:11.5px;font-weight:500;background:var(--surface);color:var(--muted);border:1px solid var(--line);}
-.lang-chip-exclusive{background:rgba(139,47,168,0.08);color:var(--violet);border-color:rgba(139,47,168,0.25);}
-@media (max-width:820px){.corridor-grid{grid-template-columns:1fr;}}
+/* WHAT IS VALSEA */
+.what-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+.what-card{background:var(--soft);padding:26px 22px;}
+.what-card h4{font-size:14.5px;font-weight:600;margin-bottom:8px;}
+.what-card p{font-size:13px;color:var(--muted);line-height:1.55;}
+@media (max-width:760px){.what-grid{grid-template-columns:1fr;}}
 
-/* LANGUAGE STATS + REGION GRID */
-.lang-stat-row{display:flex;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:32px;}
-.lang-stat{flex:1;background:var(--paper-soft);padding:26px 24px;text-align:center;}
-.lang-stat .l-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:36px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
-.lang-stat .l-label{font-size:12.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;}
-@media (max-width:600px){.lang-stat-row{flex-direction:column;}}
+/* WHO BUYS */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.who-card{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:24px;}
+.who-card h4{font-size:15px;font-weight:600;margin-bottom:6px;}
+.who-card .who-desc{font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.55;}
+.who-examples{list-style:none;font-size:12.5px;color:var(--ink);}
+.who-examples li{padding-left:14px;position:relative;margin-bottom:5px;}
+.who-examples li::before{content:'';width:4px;height:4px;background:var(--violet);border-radius:50%;position:absolute;left:0;top:7px;}
+@media (max-width:760px){.who-grid{grid-template-columns:1fr;}}
 
-.lang-region-row{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 20px;background:var(--paper-soft);border:1px solid var(--line);border-radius:8px;margin-bottom:8px;align-items:start;}
-.lang-region-name{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--violet);padding-top:5px;}
-.lang-chips-row{display:flex;flex-wrap:wrap;gap:6px;}
-.lc{padding:4px 10px;border-radius:100px;font-size:12px;font-weight:500;background:rgba(139,47,168,0.07);color:var(--violet);border:1px solid rgba(139,47,168,0.2);}
-@media (max-width:820px){.lang-region-row{grid-template-columns:1fr;gap:8px;}}
-
-/* WHY PARTNER */
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;}
-.why-card{background:var(--paper-soft);padding:30px;}
-.why-num{font-family:'Poppins',sans-serif;font-size:36px;font-weight:800;color:rgba(139,47,168,0.12);line-height:1;margin-bottom:12px;}
-.why-card h3{font-size:16px;margin-bottom:8px;}
-.why-card p{font-size:13.5px;color:var(--muted);line-height:1.6;}
-@media (max-width:820px){.why-grid{grid-template-columns:1fr;}}
-
-/* PARTNER TIERS */
-.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;}
-.tier-card{background:var(--paper-soft);padding:32px 26px;position:relative;}
-.tier-card.featured{background:var(--paper);border:2px solid var(--violet);border-radius:10px;box-shadow:0 8px 32px rgba(139,47,168,0.12);}
-.tier-star{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--grad);color:white;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;padding:4px 12px;border-radius:100px;white-space:nowrap;}
-.tier-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
-.tier-name{font-family:'Poppins',sans-serif;font-size:20px;font-weight:700;margin-bottom:20px;}
-.tier-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
-.tier-features li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink);line-height:1.45;}
-.tier-features li::before{content:'\2713';color:var(--teal);font-weight:700;flex-shrink:0;}
-@media (max-width:820px){.tier-grid{grid-template-columns:1fr;}}
-
-/* BENCHMARKS */
-.bench-table{width:100%;border-collapse:collapse;background:var(--paper-soft);border-radius:8px;overflow:hidden;border:1px solid var(--line);}
-.bench-table th{padding:13px 20px;text-align:left;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);background:var(--surface);border-bottom:1px solid var(--line);}
-.bench-table td{padding:14px 20px;font-size:14px;color:var(--ink);border-bottom:1px solid var(--line);}
-.bench-table tr:last-child td{border-bottom:none;}
-.bench-table tr.valsea-row{background:rgba(139,47,168,0.03);}
-.bench-table tr.valsea-row td{font-weight:600;}
-.b-good{color:var(--teal);font-weight:700;}
-.b-bad{color:var(--bad);}
-.b-na{color:var(--muted);font-style:italic;font-weight:400;}
-.b-ok{color:#b45309;}
-
-/* API PRODUCT */
-.api-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:start;}
-.feature-list{display:flex;flex-direction:column;gap:14px;}
-.feature-row{display:flex;gap:14px;align-items:flex-start;padding:18px;background:var(--paper-soft);border:1px solid var(--line);border-radius:8px;}
-.feature-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--surface);}
-.feature-text h4{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px;}
-.feature-text p{font-size:12.5px;color:var(--muted);line-height:1.55;}
-@media (max-width:820px){.api-grid{grid-template-columns:1fr;}}
-
-.code-block{background:var(--ink);border-radius:8px;padding:26px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.85;color:#B7AFCB;overflow-x:auto;}
-.code-block .c-method{color:#7FD9C4;}
-.code-block .c-str{color:#E3B23C;}
-.code-block .c-key{color:#A879D6;}
-.code-block .c-comment{color:#655F7A;}
+/* LANGUAGES */
+.lang-bar{display:flex;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:24px;}
+.lang-stat{flex:1;background:var(--soft);padding:22px;text-align:center;}
+.lang-stat .num{font-family:'Poppins',sans-serif;font-weight:800;font-size:32px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.lang-stat .label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px;}
+@media (max-width:600px){.lang-bar{flex-direction:column;}}
+.region-list{display:flex;flex-wrap:wrap;gap:8px;}
+.region-tag{padding:6px 14px;border-radius:100px;font-size:12px;background:rgba(139,47,168,0.06);color:var(--violet);border:1px solid rgba(139,47,168,0.15);}
 
 /* CTA */
-.cta-section{border-bottom:none;text-align:center;padding:90px 0 80px;background:var(--paper-soft);}
-.cta-section h2{font-size:clamp(28px,4vw,42px);margin-bottom:14px;}
-.cta-section p{color:var(--muted);max-width:520px;margin:0 auto 32px;}
-.cta-methods{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px;}
-.cta-method{display:flex;align-items:center;gap:8px;padding:10px 18px;background:var(--paper);border:1px solid var(--line);border-radius:6px;font-size:13px;color:var(--muted);text-decoration:none;transition:border-color .2s;}
-.cta-method:hover{border-color:var(--violet);}
+.cta-section{border-bottom:none;text-align:center;padding:80px 0;background:var(--soft);}
+.cta-section h2{font-size:clamp(26px,3.5vw,38px);margin-bottom:12px;}
+.cta-section p{color:var(--muted);max-width:440px;margin:0 auto 28px;font-size:15px;}
+.cta-methods{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px;}
+.cta-pill{display:flex;align-items:center;gap:7px;padding:10px 16px;background:var(--paper);border:1px solid var(--line);border-radius:6px;font-size:13px;color:var(--muted);text-decoration:none;transition:border-color .2s;}
+.cta-pill:hover{border-color:var(--violet);}
 
-footer{padding:32px 0;background:var(--paper-soft);border-top:1px solid var(--line);}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace;flex-wrap:wrap;gap:12px;}
-footer .f-links{display:flex;gap:20px;}
-footer .f-links a{text-decoration:none;transition:color .2s;}
-footer .f-links a:hover{color:var(--ink);}
+footer{padding:28px 0;border-top:1px solid var(--line);}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);font-family:'IBM Plex Mono',monospace;flex-wrap:wrap;gap:12px;}
+footer a{text-decoration:none;transition:color .2s;}
+footer a:hover{color:var(--ink);}
 
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
 .reveal.in{opacity:1;transform:translateY(0);}
-@media (prefers-reduced-motion: reduce){.reveal{transition:none;opacity:1;transform:none;} html{scroll-behavior:auto;}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
 </style>
 </head>
 <body>
@@ -181,63 +118,55 @@ footer .f-links a:hover{color:var(--ink);}
 <nav>
   <div class="wrap">
     <a href="#" class="logo">VALSEA</a>
-    <div class="navlinks">
-      <a href="#revenue">Revenue</a>
-      <a href="#corridors">Markets</a>
-      <a href="#languages">Languages</a>
-      <a href="#benchmarks">Benchmarks</a>
-      <a href="#tiers">Tiers</a>
-      <a href="#api">API</a>
-    </div>
-    <a class="nav-cta" href="#cta">Become a Partner &rarr;</a>
+    <a class="nav-cta" href="#cta">Become a Partner</a>
   </div>
 </nav>
 
+
+<!-- HERO -->
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Partner Program</div>
-    <h1>Introduce a client, or sell for us &mdash; <em>get paid on it.</em></h1>
-    <p class="lede">If you bring us a business, developer, or SME who becomes a paying customer, you earn a share of that revenue for as long as they stay a customer.</p>
+    <h1>Know a business that needs multilingual voice AI? <em>Get paid for the intro.</em></h1>
+    <p class="hero-sub">Introduce us to any company struggling with accented speech, multilingual calls, or cross-border communication. If they become a customer, you earn 15&ndash;30% of revenue &mdash; every month.</p>
     <div class="hero-ctas">
       <a href="#cta" class="btn btn-primary">Become a partner &rarr;</a>
-      <a href="#api" class="btn btn-ghost">Explore the API &rarr;</a>
+      <a href="#who" class="btn btn-ghost">Who buys this?</a>
     </div>
   </div>
 </header>
 
 
-<!-- ═══════ REVENUE SHARE ═══════ -->
+<!-- REVENUE SHARE -->
 <section id="revenue">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">How revenue share works</div>
-      <h2>Two ways to partner. Both earn recurring revenue.</h2>
-      <p>The split depends on how involved you are in the sale &mdash; a warm intro earns differently than an active reseller who owns the relationship.</p>
-    </div>
+    <div class="eyebrow reveal">How you earn</div>
+    <h2 style="font-size:clamp(24px,3.2vw,34px);margin-bottom:10px;" class="reveal">Two paths. Both pay recurring revenue.</h2>
+    <p style="color:var(--muted);font-size:15px;max-width:520px;margin-bottom:36px;" class="reveal">Choose based on how involved you want to be. A warm intro is enough &mdash; or own the full sale for a bigger cut.</p>
 
     <div class="rev-grid reveal">
       <div class="rev-card referral">
-        <span class="r-eyebrow">Referral Partner</span>
-        <h3>You make the intro. We close and deliver.</h3>
-        <div class="r-pct">15%</div>
-        <div class="r-pct-label">of net revenue, for 12 months from close &mdash; proposed</div>
-        <p>You introduce a business, developer, or SME to VALSEA. Our team handles the pitch, pilot, and close.</p>
+        <div class="rev-label">Referral Partner</div>
+        <h3>You intro. We close.</h3>
+        <div class="rev-pct">15%</div>
+        <div class="rev-terms">of net revenue &middot; 12 months from close</div>
+        <p>Send us a warm intro &mdash; we handle the pitch, demo, pilot, and close. You get paid on collected revenue every month.</p>
         <ul>
-          <li>No selling required &mdash; a warm intro is enough</li>
-          <li>Paid monthly on collected revenue, not invoiced</li>
-          <li>Best fit: advisors, agencies, well-connected operators</li>
+          <li>No selling required</li>
+          <li>Paid monthly, no invoice needed</li>
+          <li>Best for: advisors, agencies, operators with networks</li>
         </ul>
       </div>
       <div class="rev-card reseller">
-        <span class="r-eyebrow">Reseller Partner</span>
-        <h3>You own the sale end-to-end.</h3>
-        <div class="r-pct">30%</div>
-        <div class="r-pct-label">of net revenue, for the life of the account &mdash; proposed</div>
-        <p>You pitch, negotiate, and close the deal yourself under a reseller agreement. VALSEA delivers the product; you own the client relationship.</p>
+        <div class="rev-label">Reseller Partner</div>
+        <h3>You own the sale.</h3>
+        <div class="rev-pct">30%</div>
+        <div class="rev-terms">of net revenue &middot; lifetime of account</div>
+        <p>You pitch, negotiate, and close the deal yourself. We deliver the product. You keep the client relationship &mdash; and 30% forever.</p>
         <ul>
-          <li>Higher share &mdash; you're doing the sales work</li>
-          <li>Requires a signed reseller agreement</li>
-          <li>Best fit: systems integrators, regional distributors, agencies already selling into your target vertical</li>
+          <li>Higher share &mdash; you do the work</li>
+          <li>Requires signed reseller agreement</li>
+          <li>Best for: SIs, distributors, vertical-focused agencies</li>
         </ul>
       </div>
     </div>
@@ -245,489 +174,175 @@ footer .f-links a:hover{color:var(--ink);}
 </section>
 
 
-<!-- ═══════ HOW IT WORKS ═══════ -->
+<!-- HOW IT WORKS -->
 <section>
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">How it works</div>
-      <h2>Three steps from intro to payout.</h2>
-    </div>
-    <div class="how-steps reveal">
-      <div class="how-step">
-        <div class="h-num">01</div>
-        <div><h4>Register the lead</h4><p>Send us the client before you pitch them &mdash; first partner to register a lead gets credit for it.</p></div>
+    <div class="eyebrow reveal">How it works</div>
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:32px;" class="reveal">Three steps. That's it.</h2>
+
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Send us the lead</h4>
+        <p>Email or WhatsApp the company name and a contact. First partner to register gets credit.</p>
       </div>
-      <div class="how-step">
-        <div class="h-num">02</div>
-        <div><h4>We close, or you close</h4><p>Referral partners hand off to our team. Reseller partners run the deal under a signed agreement.</p></div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>We close (or you close)</h4>
+        <p>Referral? We take it from here. Reseller? Run the deal yourself under our agreement.</p>
       </div>
-      <div class="how-step">
-        <div class="h-num">03</div>
-        <div><h4>Get paid monthly</h4><p>Revenue share is calculated on collected (not invoiced) revenue and paid out monthly for as long as the client stays active.</p></div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Get paid monthly</h4>
+        <p>Revenue share paid out every month on collected revenue. As long as they stay, you earn.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════ CORRIDORS ═══════ -->
-<section id="corridors">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Trade corridors</div>
-      <h2>Global markets. Real use cases.</h2>
-      <p>VALSEA operates across the world's fastest-growing trade corridors &mdash; regions where no global speech platform can fully serve the language requirements.</p>
-    </div>
-
-    <div class="corridor-grid reveal">
-
-      <div class="c-card">
-        <div class="c-header" style="background:linear-gradient(135deg,#3d2400,#6b3a00);">
-          <div class="c-eyebrow">Priority Corridor</div>
-          <div class="c-title">China &harr; Africa</div>
-          <div class="c-meta">$296B trade volume</div>
-        </div>
-        <div class="c-body">
-          <p class="c-desc">Chinese-invested BPOs, mining, and telecom in East and West Africa need multilingual voice for Mandarin, African-accented English, and Swahili simultaneously.</p>
-          <ul class="c-usecases">
-            <li>BPO call center transcription and compliance</li>
-            <li>Mining project multilingual meeting intelligence</li>
-            <li>Telecom customer service &mdash; Mandarin &harr; Swahili &harr; English</li>
-          </ul>
-          <div class="c-langs">
-            <span class="lang-chip lang-chip-exclusive">&star; Mandarin&harr;Swahili (Exclusive)</span>
-            <span class="lang-chip">Mandarin</span>
-            <span class="lang-chip">African English</span>
-            <span class="lang-chip">Swahili</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-header" style="background:linear-gradient(135deg,#0c2d5e,#1a4a8a);">
-          <div class="c-eyebrow">Growth Corridor</div>
-          <div class="c-title">China &harr; Southeast Asia</div>
-          <div class="c-meta">$200B+ trade volume</div>
-        </div>
-        <div class="c-body">
-          <p class="c-desc">Chinese manufacturing firms expanding into Vietnam, Indonesia, Thailand, and Malaysia face daily communication gaps between management and local staff.</p>
-          <ul class="c-usecases">
-            <li>Factory management &mdash; Mandarin + Bahasa / Thai / Vietnamese</li>
-            <li>Cross-border supply chain and logistics meeting notes</li>
-            <li>Trade documentation from mixed-language operations calls</li>
-          </ul>
-          <div class="c-langs">
-            <span class="lang-chip">Mandarin</span>
-            <span class="lang-chip">Bahasa Indonesia</span>
-            <span class="lang-chip">Vietnamese</span>
-            <span class="lang-chip">Thai</span>
-            <span class="lang-chip">Singlish</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-header" style="background:linear-gradient(135deg,#0a4435,#0d5c49);">
-          <div class="c-eyebrow">High-Volume Corridor</div>
-          <div class="c-title">India &harr; Middle East</div>
-          <div class="c-meta">$178B trade &middot; 73,100 Indian companies in Dubai</div>
-        </div>
-        <div class="c-body">
-          <p class="c-desc">Indian enterprises in the Gulf manage multilingual teams across logistics, construction, and BPO. Hindi-Arabic-English code-switching is the norm.</p>
-          <ul class="c-usecases">
-            <li>Logistics dispatch and delivery coordination</li>
-            <li>Construction site safety SOPs and crew communication</li>
-            <li>BPO call center QA &mdash; Hindi/Arabic/English mix</li>
-          </ul>
-          <div class="c-langs">
-            <span class="lang-chip">Hindi</span>
-            <span class="lang-chip">Arabic</span>
-            <span class="lang-chip">Urdu</span>
-            <span class="lang-chip">Tamil</span>
-            <span class="lang-chip">Malayalam</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-header" style="background:linear-gradient(135deg,#3d0a28,#6b1245);">
-          <div class="c-eyebrow">Emerging Corridor</div>
-          <div class="c-title">Africa (Intra-Continental)</div>
-          <div class="c-meta">AfCFTA &middot; 1.4B population &middot; 2,000+ languages</div>
-        </div>
-        <div class="c-body">
-          <p class="c-desc">Pan-African enterprises, NGOs, and fintech need voice infrastructure spanning Swahili, Hausa, Amharic, Yoruba, and dozens more across different accent profiles.</p>
-          <ul class="c-usecases">
-            <li>Fintech voice-to-transaction and KYC verification</li>
-            <li>Healthcare tele-consultation transcription</li>
-            <li>Agricultural supply chain coordination across language zones</li>
-          </ul>
-          <div class="c-langs">
-            <span class="lang-chip">Swahili</span>
-            <span class="lang-chip">Hausa</span>
-            <span class="lang-chip">Amharic</span>
-            <span class="lang-chip">Yoruba</span>
-            <span class="lang-chip">Igbo</span>
-            <span class="lang-chip">Zulu</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-header" style="background:linear-gradient(135deg,#1a1a3e,#2d2d6b);">
-          <div class="c-eyebrow">Enterprise Corridor</div>
-          <div class="c-title">Europe &amp; UK</div>
-          <div class="c-meta">Multilingual enterprise operations</div>
-        </div>
-        <div class="c-body">
-          <p class="c-desc">European multinationals with distributed teams across 20+ languages need meeting transcription, compliance recording, and real-time translation for cross-border operations.</p>
-          <ul class="c-usecases">
-            <li>Multinational meeting transcription (French/German/Spanish/English)</li>
-            <li>Compliance recording for financial services</li>
-            <li>Customer service QA across European languages</li>
-          </ul>
-          <div class="c-langs">
-            <span class="lang-chip">English</span>
-            <span class="lang-chip">French</span>
-            <span class="lang-chip">German</span>
-            <span class="lang-chip">Spanish</span>
-            <span class="lang-chip">Italian</span>
-            <span class="lang-chip">Dutch</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-header" style="background:linear-gradient(135deg,#1c1c4a,#2e1065);">
-          <div class="c-eyebrow">Enterprise Corridor</div>
-          <div class="c-title">United States (Multilingual)</div>
-          <div class="c-meta">67M+ non-English speakers &middot; $3.2T immigrant GDP</div>
-        </div>
-        <div class="c-body">
-          <p class="c-desc">US enterprises serving immigrant communities, multilingual call centers, or healthcare and legal require speech infrastructure for accented English, Spanish, Mandarin, Hindi, and more.</p>
-          <ul class="c-usecases">
-            <li>Multilingual healthcare transcription and patient intake</li>
-            <li>Legal deposition transcription &mdash; accented speakers</li>
-            <li>Bilingual call center QA (English/Spanish/Mandarin)</li>
-          </ul>
-          <div class="c-langs">
-            <span class="lang-chip">English</span>
-            <span class="lang-chip">Spanish</span>
-            <span class="lang-chip">Mandarin</span>
-            <span class="lang-chip">Hindi</span>
-            <span class="lang-chip">Tagalog</span>
-            <span class="lang-chip">Vietnamese</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-header" style="background:linear-gradient(135deg,#4a2800,#7a4400);">
-          <div class="c-eyebrow">Expansion Corridor</div>
-          <div class="c-title">India &harr; Africa</div>
-          <div class="c-meta">$100B+ trade &middot; 900+ Indian factories in Uganda</div>
-        </div>
-        <div class="c-body">
-          <p class="c-desc">Indian manufacturers, pharma exporters, and logistics operators expanding across East and West Africa face Hindi-Swahili-English communication challenges at every level.</p>
-          <ul class="c-usecases">
-            <li>Manufacturing floor management and safety SOPs</li>
-            <li>Pharma compliance &mdash; multilingual batch records</li>
-            <li>Supply chain coordination across language zones</li>
-          </ul>
-          <div class="c-langs">
-            <span class="lang-chip">Hindi</span>
-            <span class="lang-chip">Swahili</span>
-            <span class="lang-chip">Gujarati</span>
-            <span class="lang-chip">Punjabi</span>
-            <span class="lang-chip">Luganda</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-card">
-        <div class="c-header" style="background:linear-gradient(135deg,#2d1b00,#5c3700);">
-          <div class="c-eyebrow">Strategic Corridor</div>
-          <div class="c-title">Middle East &amp; Gulf</div>
-          <div class="c-meta">Arabic dialects &middot; Persian &middot; Turkish &middot; Urdu</div>
-        </div>
-        <div class="c-body">
-          <p class="c-desc">Gulf enterprises operate with workforces speaking Arabic, Urdu, Persian, Hindi, and English simultaneously. Contact centers, oil &amp; gas, and government services need native multilingual voice AI.</p>
-          <ul class="c-usecases">
-            <li>Government service hotlines &mdash; Arabic dialect handling</li>
-            <li>Oil &amp; gas field operations &mdash; multilingual safety comms</li>
-            <li>Banking and insurance call QA &mdash; Arabic/English/Urdu</li>
-          </ul>
-          <div class="c-langs">
-            <span class="lang-chip">Arabic</span>
-            <span class="lang-chip">Persian</span>
-            <span class="lang-chip">Turkish</span>
-            <span class="lang-chip">Urdu</span>
-            <span class="lang-chip">Kurdish</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 
-<!-- ═══════ LANGUAGE COVERAGE ═══════ -->
-<section id="languages">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Language coverage</div>
-      <h2>140+ languages and dialects. All supported today.</h2>
-      <p>Every language below runs on the same routing and semantic layer &mdash; one product to pitch, not a patchwork of point solutions.</p>
-    </div>
-
-    <div class="lang-stat-row reveal">
-      <div class="lang-stat"><div class="l-num">140+</div><div class="l-label">Languages supported</div></div>
-      <div class="lang-stat"><div class="l-num">118</div><div class="l-label">Transcription languages</div></div>
-      <div class="lang-stat"><div class="l-num">116</div><div class="l-label">Real-time translation</div></div>
-      <div class="lang-stat"><div class="l-num">9</div><div class="l-label">Regions covered</div></div>
-    </div>
-
-    <div class="reveal">
-      <div class="lang-region-row"><div class="lang-region-name">East Asia</div><div class="lang-chips-row"><span class="lc">Mandarin Chinese</span><span class="lc">Cantonese</span><span class="lc">Japanese</span><span class="lc">Korean</span><span class="lc">Mongolian</span><span class="lc">Cantonese (HK)</span><span class="lc">Cantonese (Guangdong)</span><span class="lc">Wu</span><span class="lc">Minnan</span><span class="lc">Sichuan dialect</span><span class="lc">Shanghainese</span><span class="lc">Dongbei dialect</span><span class="lc">Shandong dialect</span><span class="lc">Henan dialect</span><span class="lc">Hubei dialect</span><span class="lc">Hunan dialect</span><span class="lc">Jiangxi dialect</span><span class="lc">Yunnan dialect</span><span class="lc">Guizhou dialect</span><span class="lc">Gansu dialect</span><span class="lc">Shaanxi dialect</span><span class="lc">Shanxi dialect</span><span class="lc">Hebei dialect</span><span class="lc">Tianjin dialect</span><span class="lc">Ningxia dialect</span><span class="lc">Anhui dialect</span></div></div>
-      <div class="lang-region-row"><div class="lang-region-name">Southeast Asia</div><div class="lang-chips-row"><span class="lc">Indonesian</span><span class="lc">Malay</span><span class="lc">Vietnamese</span><span class="lc">Thai</span><span class="lc">Filipino</span><span class="lc">Javanese</span><span class="lc">Cebuano</span><span class="lc">Burmese</span><span class="lc">Khmer</span><span class="lc">Lao</span><span class="lc">Singlish</span><span class="lc">English (PH)</span></div></div>
-      <div class="lang-region-row"><div class="lang-region-name">South Asia</div><div class="lang-chips-row"><span class="lc">Hindi</span><span class="lc">Bengali</span><span class="lc">Tamil</span><span class="lc">Telugu</span><span class="lc">Kannada</span><span class="lc">Malayalam</span><span class="lc">Marathi</span><span class="lc">Gujarati</span><span class="lc">Punjabi</span><span class="lc">Urdu</span><span class="lc">Nepali</span><span class="lc">Sindhi</span><span class="lc">Assamese</span><span class="lc">Odia</span><span class="lc">Sinhala</span><span class="lc">Konkani</span><span class="lc">Kashmiri</span><span class="lc">Maithili</span><span class="lc">Dogri</span><span class="lc">Sanskrit</span><span class="lc">Santali</span><span class="lc">Manipuri</span><span class="lc">Bodo</span></div></div>
-      <div class="lang-region-row"><div class="lang-region-name">Central Asia</div><div class="lang-chips-row"><span class="lc">Kazakh</span><span class="lc">Kyrgyz</span><span class="lc">Uzbek</span><span class="lc">Tajik</span><span class="lc">Armenian</span><span class="lc">Azerbaijani</span><span class="lc">Georgian</span></div></div>
-      <div class="lang-region-row"><div class="lang-region-name">Middle East</div><div class="lang-chips-row"><span class="lc">Arabic</span><span class="lc">Persian (Farsi)</span><span class="lc">Turkish</span><span class="lc">Hebrew</span><span class="lc">Kurdish</span><span class="lc">Pashto</span></div></div>
-      <div class="lang-region-row"><div class="lang-region-name">Africa</div><div class="lang-chips-row"><span class="lc">Swahili</span><span class="lc">Hausa</span><span class="lc">Amharic</span><span class="lc">Igbo</span><span class="lc">Afrikaans</span><span class="lc">Somali</span><span class="lc">Wolof</span><span class="lc">Xhosa</span><span class="lc">Zulu</span><span class="lc">Shona</span><span class="lc">Lingala</span><span class="lc">Chichewa</span><span class="lc">Fulah</span><span class="lc">Luganda</span><span class="lc">Luo</span><span class="lc">Northern Sotho</span><span class="lc">Umbundu</span><span class="lc">Kabuverdianu</span><span class="lc">Yoruba</span><span class="lc">Twi</span><span class="lc">Kinyarwanda</span><span class="lc">Oromo</span><span class="lc">Tswana</span><span class="lc">Sotho</span><span class="lc">Akan</span><span class="lc">Nigerian Pidgin</span><span class="lc">Bemba</span><span class="lc">Nyankole</span><span class="lc">Ga</span><span class="lc">African-accented English</span></div></div>
-      <div class="lang-region-row"><div class="lang-region-name">Europe</div><div class="lang-chips-row"><span class="lc">English</span><span class="lc">French</span><span class="lc">German</span><span class="lc">Spanish</span><span class="lc">Portuguese</span><span class="lc">Italian</span><span class="lc">Russian</span><span class="lc">Dutch</span><span class="lc">Polish</span><span class="lc">Ukrainian</span><span class="lc">Romanian</span><span class="lc">Czech</span><span class="lc">Hungarian</span><span class="lc">Swedish</span><span class="lc">Bulgarian</span><span class="lc">Serbian</span><span class="lc">Norwegian</span><span class="lc">Finnish</span><span class="lc">Danish</span><span class="lc">Slovak</span><span class="lc">Croatian</span><span class="lc">Lithuanian</span><span class="lc">Slovenian</span><span class="lc">Latvian</span><span class="lc">Estonian</span><span class="lc">Greek</span><span class="lc">Belarusian</span><span class="lc">Catalan</span><span class="lc">Bosnian</span><span class="lc">Macedonian</span><span class="lc">Galician</span><span class="lc">Luxembourgish</span><span class="lc">Maltese</span><span class="lc">Icelandic</span><span class="lc">Irish</span><span class="lc">Welsh</span><span class="lc">Asturian</span><span class="lc">Occitan</span></div></div>
-      <div class="lang-region-row"><div class="lang-region-name">Pacific</div><div class="lang-chips-row"><span class="lc">M&#257;ori</span></div></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════ BENCHMARKS ═══════ -->
-<section id="benchmarks">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Performance</div>
-      <h2>Built where global engines break.</h2>
-      <p>VALSEA's performance on the regional languages that matter most &mdash; where standard ASR platforms have historically struggled.</p>
-    </div>
-
-    <table class="bench-table reveal">
-      <thead>
-        <tr>
-          <th>Provider</th>
-          <th>Vietnamese (WER)</th>
-          <th>Mandarin &harr; Swahili</th>
-          <th>SEA Code-Switching</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="valsea-row">
-          <td>VALSEA</td>
-          <td class="b-good">10%</td>
-          <td><span class="b-good">&check; Available</span></td>
-          <td class="b-good">Strong</td>
-        </tr>
-        <tr>
-          <td>Google Cloud Speech</td>
-          <td class="b-bad">20&ndash;35%</td>
-          <td class="b-na">Not available</td>
-          <td class="b-ok">Partial</td>
-        </tr>
-        <tr>
-          <td>Azure Cognitive Services</td>
-          <td class="b-bad">25&ndash;40%</td>
-          <td class="b-na">Not available</td>
-          <td class="b-ok">Partial</td>
-        </tr>
-        <tr>
-          <td>AWS Transcribe</td>
-          <td class="b-bad">30&ndash;45%</td>
-          <td class="b-na">Not available</td>
-          <td class="b-bad">Poor</td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size:12px;color:var(--muted);margin-top:14px;" class="reveal">WER = Word Error Rate (lower is better). Benchmarked on VALSEA internal evaluation data. Competitor ranges from publicly available benchmarks.</p>
-  </div>
-</section>
-
-
-<!-- ═══════ WHY PARTNER ═══════ -->
+<!-- WHAT IS VALSEA -->
 <section>
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Why partner with VALSEA</div>
-      <h2>Structural advantages for distribution.</h2>
-    </div>
+    <div class="eyebrow reveal">What you're introducing</div>
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:10px;" class="reveal">VALSEA turns messy multilingual speech into structured data.</h2>
+    <p style="color:var(--muted);font-size:15px;max-width:540px;margin-bottom:32px;" class="reveal">Think of it as speech-to-text that actually works for accented, mixed-language, code-switched conversations &mdash; where Google, Azure, and AWS produce garbage.</p>
 
-    <div class="why-grid reveal">
-      <div class="why-card">
-        <div class="why-num">01</div>
-        <h3>Zero competition on key routes</h3>
-        <p>Mandarin &harr; Swahili does not exist at Google, Azure, or AWS. For enterprises on these corridors, VALSEA is the only option.</p>
+    <div class="what-grid reveal">
+      <div class="what-card">
+        <h4>Transcription</h4>
+        <p>Accurate speech-to-text for 140+ languages and dialects, including regional accents that break standard ASR.</p>
       </div>
-      <div class="why-card">
-        <div class="why-num">02</div>
-        <h3>Data residency &mdash; no compliance risk</h3>
-        <p>VALSEA supports regional data residency deployment. No cross-border data transfer, no PIPL/GDPR exposure for your enterprise customers.</p>
+      <div class="what-card">
+        <h4>Understanding</h4>
+        <p>Extracts meaning: topics, action items, entities, and sentiment &mdash; even when speakers mix 2&ndash;3 languages in one sentence.</p>
       </div>
-      <div class="why-card">
-        <div class="why-num">03</div>
-        <h3>Expanding demand, no ceiling</h3>
-        <p>Cross-border trade corridors are growing. Chinese BPOs, Indian logistics operators, African fintechs &mdash; all actively building multilingual ops infrastructure.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-num">04</div>
-        <h3>Full co-sell support</h3>
-        <p>Competitive reseller margins with joint go-to-market. Sales materials, technical documentation, dedicated integration support, and quarterly business reviews.</p>
+      <div class="what-card">
+        <h4>Output</h4>
+        <p>Delivers meeting notes, compliance transcripts, subtitles, or structured JSON &mdash; ready to plug into existing workflows.</p>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══════ PARTNER TIERS ═══════ -->
-<section id="tiers">
+<!-- WHO BUYS THIS -->
+<section id="who">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Partner tiers</div>
-      <h2>Three tiers. One shared goal.</h2>
-      <p>Whether you're a cloud reseller, a system integrator, or a platform looking to embed speech intelligence.</p>
-    </div>
+    <div class="eyebrow reveal">Who buys this</div>
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:10px;" class="reveal">If they deal with multilingual voice, they're a lead.</h2>
+    <p style="color:var(--muted);font-size:15px;max-width:520px;margin-bottom:32px;" class="reveal">Any company with call centers, multilingual meetings, or cross-border operations is a potential customer. Here are the strongest fits:</p>
 
-    <div class="tier-grid reveal">
-      <div class="tier-card">
-        <div class="tier-label">Tier 1</div>
-        <div class="tier-name">Authorized Reseller</div>
-        <ul class="tier-features">
-          <li>API resale rights</li>
-          <li>Standard reseller margin</li>
-          <li>Multilingual sales materials</li>
-          <li>Partner support portal</li>
-          <li>Sandbox &amp; demo access</li>
-          <li>Standard SLA (99.5%)</li>
+    <div class="who-grid reveal">
+      <div class="who-card">
+        <h4>BPOs &amp; Call Centers</h4>
+        <div class="who-desc">500&ndash;5,000 agent operations handling calls in multiple languages or accented English.</div>
+        <ul class="who-examples">
+          <li>QA scoring and compliance recording</li>
+          <li>Code-switched call transcription</li>
+          <li>Agent performance analytics</li>
         </ul>
-        <a href="#cta" class="btn btn-ghost" style="width:100%;justify-content:center;">Apply</a>
       </div>
-      <div class="tier-card featured">
-        <div class="tier-star">Most Popular</div>
-        <div class="tier-label">Tier 2</div>
-        <div class="tier-name">Strategic Partner</div>
-        <ul class="tier-features">
-          <li>Everything in Tier 1</li>
-          <li>Enhanced reseller margin</li>
-          <li>Joint go-to-market support</li>
-          <li>Dedicated Partner Success Manager</li>
-          <li>Custom integration support</li>
-          <li>Priority SLA (99.9%)</li>
-          <li>Quarterly business reviews</li>
-          <li>Regional exclusivity available</li>
+      <div class="who-card">
+        <h4>Logistics &amp; Supply Chain</h4>
+        <div class="who-desc">Cross-border forwarders, 3PLs, and port operators managing multilingual coordination.</div>
+        <ul class="who-examples">
+          <li>Voice-to-order capture</li>
+          <li>Freight coordination transcription</li>
+          <li>Shipment documentation</li>
         </ul>
-        <a href="#cta" class="btn btn-primary" style="width:100%;justify-content:center;">Apply</a>
       </div>
-      <div class="tier-card">
-        <div class="tier-label">Tier 3</div>
-        <div class="tier-name">OEM Partner</div>
-        <ul class="tier-features">
-          <li>Everything in Tier 2</li>
-          <li>White-label API deployment</li>
-          <li>Custom pricing structure</li>
-          <li>Private model fine-tuning</li>
-          <li>On-premise deployment option</li>
-          <li>Co-branding rights</li>
-          <li>Corridor exclusivity</li>
+      <div class="who-card">
+        <h4>Manufacturing &amp; Construction</h4>
+        <div class="who-desc">Factories and EPC firms with mixed-language management and workforce.</div>
+        <ul class="who-examples">
+          <li>Safety SOPs in local languages</li>
+          <li>Meeting intelligence across time zones</li>
+          <li>Factory floor voice notes</li>
         </ul>
-        <a href="#cta" class="btn btn-ghost" style="width:100%;justify-content:center;">Enquire</a>
+      </div>
+      <div class="who-card">
+        <h4>Healthcare &amp; Legal</h4>
+        <div class="who-desc">Organizations transcribing patient consultations or legal depositions with accented speakers.</div>
+        <ul class="who-examples">
+          <li>Multilingual patient intake</li>
+          <li>Deposition transcription</li>
+          <li>Telehealth across languages</li>
+        </ul>
+      </div>
+      <div class="who-card">
+        <h4>Fintech &amp; Banking</h4>
+        <div class="who-desc">Companies in emerging markets needing voice-based KYC, transaction capture, or call compliance.</div>
+        <ul class="who-examples">
+          <li>Voice-to-transaction</li>
+          <li>KYC voice verification</li>
+          <li>Compliance call archiving</li>
+        </ul>
+      </div>
+      <div class="who-card">
+        <h4>Enterprise (Any Region)</h4>
+        <div class="who-desc">Any multinational with cross-border meetings, distributed teams, or multilingual customer service.</div>
+        <ul class="who-examples">
+          <li>Meeting transcription across languages</li>
+          <li>Customer service QA</li>
+          <li>Cross-border operations docs</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- ═══════ API PRODUCT ═══════ -->
-<section id="api">
+<!-- WHERE WE WORK -->
+<section id="markets">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">What you're distributing</div>
-      <h2>VALSEA Speech API</h2>
-      <p>A single REST API for transcription, semantic extraction, and structured output &mdash; deployable in any corridor with data residency compliance.</p>
+    <div class="eyebrow reveal">Where we work</div>
+    <h2 style="font-size:clamp(22px,3vw,30px);margin-bottom:10px;" class="reveal">140+ languages. 9 regions. Global coverage.</h2>
+    <p style="color:var(--muted);font-size:15px;max-width:520px;margin-bottom:28px;" class="reveal">We cover the trade corridors that global platforms ignore &mdash; the ones where accents, dialects, and code-switching break standard speech engines.</p>
+
+    <div class="lang-bar reveal">
+      <div class="lang-stat"><div class="num">140+</div><div class="label">Languages</div></div>
+      <div class="lang-stat"><div class="num">9</div><div class="label">Regions</div></div>
+      <div class="lang-stat"><div class="num">27</div><div class="label">Chinese dialects</div></div>
+      <div class="lang-stat"><div class="num">30</div><div class="label">African languages</div></div>
     </div>
 
-    <div class="api-grid reveal">
-      <div class="feature-list">
-        <div class="feature-row">
-          <div class="feature-icon">&#127919;</div>
-          <div class="feature-text">
-            <h4>POST /v1/transcribe</h4>
-            <p>Real-time and batch speech-to-text with accent profile selection. &lt;500ms latency.</p>
-          </div>
-        </div>
-        <div class="feature-row">
-          <div class="feature-icon">&#128161;</div>
-          <div class="feature-text">
-            <h4>POST /v1/understand</h4>
-            <p>Semantic extraction: topics, action items, entities, sentiment. Mixed-language native.</p>
-          </div>
-        </div>
-        <div class="feature-row">
-          <div class="feature-icon">&#128196;</div>
-          <div class="feature-text">
-            <h4>POST /v1/output</h4>
-            <p>Formatted deliverables: meeting notes, compliance reports, .srt subtitles, custom templates.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="code-block">
-<span class="c-comment"># VALSEA Speech API &mdash; Partner Integration</span>
-
-<span class="c-method">import</span> requests
-
-response = requests.post(
-  <span class="c-str">"https://api.valsea.ai/v1/transcribe"</span>,
-  headers={
-    <span class="c-key">"Authorization"</span>: <span class="c-str">"Bearer YOUR_API_KEY"</span>
-  },
-  json={
-    <span class="c-key">"audio_url"</span>: <span class="c-str">"https://..."</span>,
-    <span class="c-key">"source_language"</span>: <span class="c-str">"hi"</span>,
-    <span class="c-key">"target_languages"</span>: [<span class="c-str">"ar"</span>, <span class="c-str">"en"</span>],
-    <span class="c-key">"output_formats"</span>: [
-      <span class="c-str">"transcript"</span>,
-      <span class="c-str">"meeting_notes"</span>
-    ],
-    <span class="c-key">"corridor"</span>: <span class="c-str">"india-uae"</span>
-  }
-)
-
-data = response.json()
-print(data[<span class="c-str">"transcript"</span>][<span class="c-str">"ar"</span>])
-print(data[<span class="c-str">"meeting_notes"</span>])</div>
+    <div class="region-list reveal">
+      <span class="region-tag">East Asia</span>
+      <span class="region-tag">Southeast Asia</span>
+      <span class="region-tag">South Asia</span>
+      <span class="region-tag">Central Asia</span>
+      <span class="region-tag">Middle East</span>
+      <span class="region-tag">Africa</span>
+      <span class="region-tag">Europe</span>
+      <span class="region-tag">United States</span>
+      <span class="region-tag">Pacific</span>
     </div>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:16px;" class="reveal">Key corridors: China&harr;Africa, China&harr;SEA, India&harr;Middle East, India&harr;Africa, US multilingual, Europe &amp; UK, Middle East &amp; Gulf, Africa intra-continental.</p>
   </div>
 </section>
 
 
-<!-- ═══════ CTA ═══════ -->
+<!-- CTA -->
 <section class="cta-section" id="cta">
   <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;">Get started</div>
-    <h2>Bring us your first client.</h2>
-    <p>Tell us who you want to introduce, or what you want to resell into &mdash; we'll set up your partner terms from there.</p>
-    <a href="mailto:partner@valsea.ai?subject=VALSEA%20Partner%20Program" class="btn btn-primary">Become a partner &rarr;</a>
+    <div class="eyebrow" style="justify-content:center;display:flex;">Get started</div>
+    <h2>Know someone? Send us their name.</h2>
+    <p>That's literally all it takes. We'll handle the rest and pay you every month if they convert.</p>
+    <a href="mailto:partner@valsea.ai?subject=Partner%20Referral" class="btn btn-primary">Become a partner &rarr;</a>
     <div class="cta-methods">
-      <a href="mailto:partner@valsea.ai" class="cta-method">&ensp;&#9993; partner@valsea.ai</a>
-      <span class="cta-method">&#128172; WeChat: valzxc_</span>
-      <a href="http://wa.me/+6589537622" target="_blank" class="cta-method">&#128241; WhatsApp</a>
-      <a href="https://valsea.ai/docs" target="_blank" class="cta-method">&#128214; API Docs</a>
+      <a href="mailto:partner@valsea.ai" class="cta-pill">&#9993;&ensp;partner@valsea.ai</a>
+      <span class="cta-pill">&#128172;&ensp;WeChat: valzxc_</span>
+      <a href="http://wa.me/+6589537622" target="_blank" class="cta-pill">&#128241;&ensp;WhatsApp</a>
     </div>
   </div>
 </section>
+
 
 <footer>
   <div class="wrap">
-    <span>&copy; 2026 VALSEA Pte. Ltd. &middot; Partner Program</span>
-    <div class="f-links">
+    <span>&copy; 2026 VALSEA Pte. Ltd.</span>
+    <div style="display:flex;gap:20px;">
       <a href="affiliate.html">Affiliates</a>
       <a href="mailto:partner@valsea.ai">Contact</a>
       <a href="https://valsea.ai/docs" target="_blank">API Docs</a>
@@ -736,11 +351,10 @@ print(data[<span class="c-str">"meeting_notes"</span>])</div>
 </footer>
 
 <script>
-const els = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-},{threshold:0.12});
-els.forEach(el=>io.observe(el));
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }});
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
